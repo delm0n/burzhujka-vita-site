@@ -5,17 +5,17 @@ import Dostavka from "../views/Dostavka.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: "/burzhujka-vita-site",
     name: "main",
     component: Main,
   },
   {
-    path: "/opt",
+    path: "burzhujka-vita-site/opt",
     name: "opt",
     component: Opt,
   },
   {
-    path: "/dostavka",
+    path: "burzhujka-vita-site/dostavka",
     name: "dostavka",
     component: Dostavka,
   },
