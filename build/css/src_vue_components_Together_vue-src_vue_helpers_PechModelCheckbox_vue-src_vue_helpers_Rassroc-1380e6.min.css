@@ -1,0 +1,709 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/helpers/PechModelCheckbox.vue?vue&type=style&index=0&id=833ff3d4&lang=scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.model-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+@media (max-width: 576px) {
+.model-checkbox {
+    gap: 10px;
+}
+}
+.icon-container {
+  margin: 0 5px;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/helpers/RassrochkaCheckbox.vue?vue&type=style&index=0&id=98e8b754&lang=scss&scoped=true ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.checkbox span[data-v-98e8b754] {
+  font-weight: 500 !important;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/Together.vue?vue&type=style&index=0&id=2626e061&lang=scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+#together .together-wrapper__order .order-offer button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 78px;
+  transition: transform 0.3s ease-in;
+  border-radius: 40px;
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order .order-offer button {
+    width: 230px;
+    height: 65px;
+}
+}
+@media (max-width: 576px) {
+#together .together-wrapper__order .order-offer button {
+    width: 150px;
+    height: 40px;
+}
+}
+#together .together-wrapper__order .order-offer button .button-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #468217;
+  transform-origin: center;
+  transition: all 0.2s ease;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0);
+  z-index: 2;
+  border-radius: 40px;
+  overflow: hidden;
+}
+#together .together-wrapper__order .order-offer button .button-background.button-animation::before {
+  content: "";
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  transform: translateX(-125%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 25%, hsla(0, 0%, 84%, 0.25) 51%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0));
+  filter: blur(2px);
+  transition: opacity 1s ease;
+  animation: sheen 3s forwards infinite;
+}
+#together .together-wrapper__order .order-offer button .button-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  color: #ffffff;
+  z-index: 3;
+  position: relative;
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order .order-offer button .button-text {
+    font-size: 18px;
+}
+}
+@media (max-width: 576px) {
+#together .together-wrapper__order .order-offer button .button-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+}
+#together .together-wrapper__order .order-offer button:not(:disabled):hover .button-background, #together .together-wrapper__order .order-offer button:not(:disabled):focus .button-background {
+  transition: all 0.2s ease-in 0.1s;
+  background-color: #417915;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0.39);
+}
+#together .together-wrapper__order .order-offer button:not(:disabled):hover .button-background::before, #together .together-wrapper__order .order-offer button:not(:disabled):focus .button-background::before {
+  opacity: 0;
+}
+#together .together-wrapper__order .order-offer button:not(:disabled):hover .button-background {
+  transform: scale(0.96);
+}
+#together .together-wrapper__order .order-offer button:not(:disabled):active {
+  transform: translateY(3px);
+}
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#together .together-wrapper__order .order-offer button:disabled .button-background {
+  background-color: rgba(95, 95, 95, 0.8784313725);
+}
+#together .together-wrapper__order, #together .together-wrapper__dops {
+  background: #ffffff;
+  border: 3px solid #ececec;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+#together {
+  padding-bottom: 100px;
+}
+@media (max-width: 992px) {
+#together {
+    padding-bottom: 80px;
+}
+}
+@media (max-width: 768px) {
+#together {
+    padding-bottom: 60px;
+}
+}
+#together-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  display: none;
+}
+@media (max-width: 576px) {
+#together-modal {
+    border-radius: 16px;
+}
+}
+#together-modal .is-close {
+  opacity: 0.5 !important;
+  transition: all 0.4s !important;
+  top: 5px !important;
+  right: 10px !important;
+}
+@media (max-width: 576px) {
+#together-modal .is-close {
+    top: 0px !important;
+    right: 0px !important;
+}
+}
+#together-modal .is-close:hover {
+  opacity: 0.8 !important;
+}
+#together-modal h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 115%;
+  color: #2b2b2b;
+  text-align: center;
+  font-size: calc(0.011875 * 100vw + 22.2px);
+}
+#together-modal h3 br {
+  display: none;
+}
+@media (min-width: 1921px) {
+#together-modal h3 {
+    font-size: 45px;
+}
+}
+@media (max-width: 320px) {
+#together-modal h3 {
+    font-size: 26px;
+}
+}
+@media (max-width: 576px) {
+#together-modal h3 br {
+    display: block;
+}
+}
+@media (max-width: 992px) {
+#together .container {
+    min-width: calc(100% - 40px) !important;
+}
+}
+@media (max-width: 992px) {
+#together .vita-input {
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 6px;
+}
+}
+@media (max-width: 992px) and (min-width: 577px) {
+#together .order-offer button {
+    width: 196px !important;
+    height: 56px !important;
+}
+}
+@media (max-width: 992px) {
+#together .checkbox div.box {
+    width: 20px;
+    height: 20px;
+}
+#together .checkbox div.box svg {
+    width: 14px;
+    height: 12px;
+}
+}
+#together .together-wrapper {
+  display: flex;
+  width: 100%;
+}
+@media (max-width: 1439px) {
+#together .together-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1050px;
+    margin: 0 auto;
+    row-gap: 50px;
+}
+}
+@media (max-width: 992px) {
+#together .together-wrapper {
+    row-gap: 35px;
+}
+}
+@media (max-width: 767px) {
+#together .together-wrapper {
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+}
+#together .together-wrapper .line {
+  height: 1px;
+  background: #cecece;
+  width: 100%;
+}
+#together .together-wrapper__dops {
+  padding: 10px 20px;
+  max-width: 470px;
+  min-width: 200px;
+}
+@media (max-width: 767px) {
+#together .together-wrapper__dops {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+}
+}
+#together .together-wrapper__dops .dops-item {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__dops .dops-item {
+    padding: 20px 0;
+}
+}
+@media (max-width: 1280px) {
+#together .together-wrapper__dops .dops-item img {
+    max-width: 100px;
+}
+}
+@media (max-width: 992px) {
+#together .together-wrapper__dops .dops-item {
+    gap: 15px;
+    padding: 15px 0;
+}
+#together .together-wrapper__dops .dops-item img {
+    max-width: 85px;
+}
+}
+@media (max-width: 576px) {
+#together .together-wrapper__dops .dops-item {
+    gap: 10px;
+    padding: 8px 0;
+}
+}
+#together .together-wrapper__dops .dops-item__content {
+  flex-grow: 1;
+}
+#together .together-wrapper__dops .dops-item__content h5 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 115%;
+  margin-bottom: 14px;
+  white-space: normal;
+  font-family: "Roboto";
+  font-style: normal;
+  color: #2b2b2b;
+  transition: all 0.5s ease;
+  font-size: calc(0.00375 * 100vw + 16.8px);
+}
+#together .together-wrapper__dops .dops-item__content h5:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+#together .together-wrapper__dops .dops-item__content h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+}
+@media (min-width: 1921px) {
+#together .together-wrapper__dops .dops-item__content h5 {
+    font-size: 24px;
+}
+}
+@media (max-width: 320px) {
+#together .together-wrapper__dops .dops-item__content h5 {
+    font-size: 18px;
+}
+}
+#together .together-wrapper__dops .dops-item__content p {
+  font-family: "Roboto";
+  font-style: normal;
+  color: #2b2b2b;
+}
+#together .together-wrapper__dops .dops-item__content p.oldprice {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 115%;
+  text-decoration-line: line-through;
+  font-size: calc(0.00125 * 100vw + 13.6px);
+}
+@media (max-width: 768px) {
+#together .together-wrapper__dops .dops-item__content p.oldprice {
+    font-size: 14px;
+}
+}
+@media (min-width: 1921px) {
+#together .together-wrapper__dops .dops-item__content p.oldprice {
+    font-size: 16px;
+}
+}
+@media (max-width: 320px) {
+#together .together-wrapper__dops .dops-item__content p.oldprice {
+    font-size: 14px;
+}
+}
+#together .together-wrapper__dops .dops-item__content p.price {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  font-size: calc(0.0025 * 100vw + 19.2px);
+}
+@media (max-width: 768px) {
+#together .together-wrapper__dops .dops-item__content p.price {
+    font-size: 20px;
+}
+}
+@media (min-width: 1921px) {
+#together .together-wrapper__dops .dops-item__content p.price {
+    font-size: 24px;
+}
+}
+@media (max-width: 320px) {
+#together .together-wrapper__dops .dops-item__content p.price {
+    font-size: 20px;
+}
+}
+#together .together-wrapper__order {
+  max-width: 470px;
+  min-width: 200px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+@media (max-width: 1439px) and (min-width: 767px) {
+#together .together-wrapper__order .line {
+    height: 90%;
+    grid-column: 2/3;
+    align-self: center;
+    grid-row: 2/4;
+}
+}
+@media (max-width: 1439px) and (min-width: 767px) {
+#together .together-wrapper__order {
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 20px;
+}
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order {
+    padding: 24px 20px;
+}
+}
+@media (max-width: 767px) {
+#together .together-wrapper__order {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    gap: 16px;
+}
+}
+#together .together-wrapper__order h4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: #323232;
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__order h4 {
+    grid-column: 1/4;
+}
+}
+@media (max-width: 767px) {
+#together .together-wrapper__order h4 {
+    font-size: 22px;
+    line-height: 26px;
+}
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__order .order-price {
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+}
+#together .together-wrapper__order .order-price p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 115%;
+  margin-top: 12px;
+  text-align: center;
+  color: #2b2b2b;
+  font-size: calc(0.005 * 100vw + 20.4px);
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order .order-price p {
+    font-size: 22px;
+    margin-top: 0;
+}
+}
+@media (min-width: 1921px) {
+#together .together-wrapper__order .order-price p {
+    font-size: 30px;
+}
+}
+@media (max-width: 320px) {
+#together .together-wrapper__order .order-price p {
+    font-size: 22px;
+}
+}
+#together .together-wrapper__order .order-price div {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 115%;
+  text-align: center;
+  color: #2b2b2b;
+  font-size: calc(0.02 * 100vw + 21.6px);
+}
+@media (max-width: 768px) {
+#together .together-wrapper__order .order-price div {
+    font-size: 28px;
+}
+}
+@media (min-width: 1921px) {
+#together .together-wrapper__order .order-price div {
+    font-size: 60px;
+}
+}
+@media (max-width: 320px) {
+#together .together-wrapper__order .order-price div {
+    font-size: 28px;
+}
+}
+#together .together-wrapper__order .order-model .checkbox span {
+  font-size: 24px;
+  font-weight: 500;
+}
+@media (max-width: 1439px) and (min-width: 768px) {
+#together .together-wrapper__order .order-model {
+    width: max-content;
+    margin: 0 auto;
+}
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order .order-model .icon-container img {
+    max-width: 55px;
+    display: block;
+}
+#together .together-wrapper__order .order-model .checkbox span {
+    font-size: 20px;
+}
+}
+@media (max-width: 345px) {
+#together .together-wrapper__order .order-model .checkbox span {
+    line-height: 23px;
+    width: min-content;
+}
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__order .order-offer {
+    grid-row: 2/4;
+    grid-column: 3/4;
+    align-self: center;
+}
+}
+#together .together-wrapper__order .order-offer .user-info {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__order .order-offer .user-info {
+    max-width: 430px;
+    margin: 0 auto;
+}
+}
+@media (max-width: 576px) {
+#together .together-wrapper__order .order-offer .user-info {
+    gap: 10px;
+}
+}
+#together .together-wrapper__order .order-offer p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #707070;
+  margin: 14px auto 24px;
+  max-width: 430px;
+}
+@media (max-width: 992px) {
+#together .together-wrapper__order .order-offer p {
+    line-height: 14px;
+    font-size: 12px;
+}
+}
+#together .together-wrapper__order .order-offer button {
+  margin: 0 auto;
+}
+#together .together-wrapper__img {
+  max-width: 570px;
+  min-width: 325px;
+  align-self: center;
+  flex-grow: 1;
+}
+@media (max-width: 1439px) {
+#together .together-wrapper__img {
+    align-self: auto;
+    flex-grow: 0;
+}
+}
+@media (max-width: 1439px) and (min-width: 993px) {
+#together .together-wrapper__img {
+    padding-right: 4%;
+}
+}
+@media (max-width: 767px) {
+#together .together-wrapper__img {
+    margin: 0 auto;
+    min-width: auto;
+}
+}
+#together .together-wrapper__img img {
+  width: 82%;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 767px) and (max-width: 1439px) {
+#together .together-wrapper__img img {
+    width: auto;
+    position: sticky;
+    max-height: 540px;
+    top: 150px;
+}
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+#together .together-wrapper__img img {
+    max-height: 48vw;
+    min-height: 340px;
+    top: 120px;
+}
+}
+@media (max-width: 767px) {
+#together .together-wrapper__img img {
+    max-width: 300px;
+    width: 100%;
+}
+}
+#together-modal {
+  max-width: 992px;
+}
+@media (max-width: 768px) {
+#together-modal {
+    max-width: 520px;
+    padding: 30px 12px 12px;
+}
+}
+#together-modal .together-wrapper {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+#together-modal .together-wrapper {
+    flex-direction: column;
+}
+}
+#together-modal .together-wrapper__img {
+  width: 33%;
+}
+@media (max-width: 768px) {
+#together-modal .together-wrapper__img {
+    width: 240px;
+}
+}
+#together-modal .together-wrapper__img img {
+  display: block;
+  width: 100%;
+}
+#together-modal .together-wrapper__text {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Roboto";
+}
+@media (max-width: 768px) {
+#together-modal .together-wrapper__text {
+    width: 90%;
+    gap: 10px;
+}
+}
+@media (max-width: 576px) {
+#together-modal .together-wrapper__text {
+    width: 100%;
+}
+}
+#together-modal .together-wrapper__text .title-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #323232;
+}
+@media (max-width: 768px) {
+#together-modal .together-wrapper__text .title-text {
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: -10px;
+}
+}
+#together-modal .together-wrapper__text div p {
+  margin: 5px 0;
+  white-space: nowrap;
+}
+#together-modal .together-wrapper__text p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #323232;
+}
+@media (max-width: 768px) {
+#together-modal .together-wrapper__text p {
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0 !important;
+}
+}
+@media (max-width: 375px) {
+#together-modal .together-wrapper__text p {
+    font-size: 13px;
+    line-height: 115%;
+}
+}
+#together-modal .together-wrapper__text p span {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=src_vue_components_Together_vue-src_vue_helpers_PechModelCheckbox_vue-src_vue_helpers_Rassroc-1380e6.min.css.map*/

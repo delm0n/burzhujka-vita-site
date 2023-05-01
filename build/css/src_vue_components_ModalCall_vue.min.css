@@ -1,0 +1,222 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/ModalCall.vue?vue&type=style&index=0&id=09102914&lang=scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+#modal-call .button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 78px;
+  transition: transform 0.3s ease-in;
+  border-radius: 40px;
+}
+@media (max-width: 992px) {
+#modal-call .button {
+    width: 230px;
+    height: 65px;
+}
+}
+@media (max-width: 576px) {
+#modal-call .button {
+    width: 150px;
+    height: 40px;
+}
+}
+#modal-call .button .button-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #468217;
+  transform-origin: center;
+  transition: all 0.2s ease;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0);
+  z-index: 2;
+  border-radius: 40px;
+  overflow: hidden;
+}
+#modal-call .button .button-background.button-animation::before {
+  content: "";
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  transform: translateX(-125%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 25%, hsla(0, 0%, 84%, 0.25) 51%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0));
+  filter: blur(2px);
+  transition: opacity 1s ease;
+  animation: sheen 3s forwards infinite;
+}
+#modal-call .button .button-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  color: #ffffff;
+  z-index: 3;
+  position: relative;
+}
+@media (max-width: 992px) {
+#modal-call .button .button-text {
+    font-size: 18px;
+}
+}
+@media (max-width: 576px) {
+#modal-call .button .button-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+}
+#modal-call .button:not(:disabled):hover .button-background, #modal-call .button:not(:disabled):focus .button-background {
+  transition: all 0.2s ease-in 0.1s;
+  background-color: #417915;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0.39);
+}
+#modal-call .button:not(:disabled):hover .button-background::before, #modal-call .button:not(:disabled):focus .button-background::before {
+  opacity: 0;
+}
+#modal-call .button:not(:disabled):hover .button-background {
+  transform: scale(0.96);
+}
+#modal-call .button:not(:disabled):active {
+  transform: translateY(3px);
+}
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#modal-call .button:disabled .button-background {
+  background-color: rgba(95, 95, 95, 0.8784313725);
+}
+#modal-call {
+  background: #ffffff;
+  border-radius: 20px;
+  display: none;
+}
+@media (max-width: 576px) {
+#modal-call {
+    border-radius: 16px;
+}
+}
+#modal-call .is-close {
+  opacity: 0.5 !important;
+  transition: all 0.4s !important;
+  top: 5px !important;
+  right: 10px !important;
+}
+@media (max-width: 576px) {
+#modal-call .is-close {
+    top: 0px !important;
+    right: 0px !important;
+}
+}
+#modal-call .is-close:hover {
+  opacity: 0.8 !important;
+}
+#modal-call h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 115%;
+  color: #2b2b2b;
+  text-align: center;
+  font-size: calc(0.011875 * 100vw + 22.2px);
+}
+#modal-call h3 br {
+  display: none;
+}
+@media (min-width: 1921px) {
+#modal-call h3 {
+    font-size: 45px;
+}
+}
+@media (max-width: 320px) {
+#modal-call h3 {
+    font-size: 26px;
+}
+}
+@media (max-width: 576px) {
+#modal-call h3 br {
+    display: block;
+}
+}
+#modal-call {
+  max-width: 865px;
+  width: 100%;
+  padding: 60px 40px 30px;
+}
+@media (max-width: 576px) {
+#modal-call {
+    padding: 30px 10px;
+    border-radius: 16px;
+}
+}
+#modal-call h3 {
+  margin-bottom: 55px;
+}
+@media (max-width: 992px) {
+#modal-call h3 {
+    margin-bottom: 30px;
+}
+}
+@media (max-width: 576px) {
+#modal-call h3 {
+    margin-bottom: 15px;
+}
+}
+#modal-call .decr {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #707070;
+}
+@media (max-width: 576px) {
+#modal-call .decr {
+    font-size: 12px;
+    line-height: 14px;
+}
+}
+#modal-call .button {
+  margin: 40px auto 44px;
+}
+@media (max-width: 576px) {
+#modal-call .button {
+    margin-top: 30px;
+    margin-bottom: 24px;
+    width: 145px;
+}
+}
+#modal-call .user-info {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+  max-width: 575px;
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+#modal-call .user-info {
+    gap: 10px;
+    max-width: 330px;
+}
+}
+
+/*# sourceMappingURL=src_vue_components_ModalCall_vue.min.css.map*/

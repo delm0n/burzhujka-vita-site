@@ -1,0 +1,199 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/Peculiar.vue?vue&type=style&index=0&id=cec82688&lang=scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#peculiar article {
+  background: #ffffff;
+  border: 3px solid #ececec;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+#peculiar {
+  overflow: hidden;
+  padding-bottom: 48px;
+}
+#peculiar .peculiar-items {
+  position: relative;
+}
+#peculiar .peculiar-items .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.1s 0s;
+}
+#peculiar .peculiar-items .swiper-slide-active {
+  opacity: 1;
+  transition: opacity 0s 0s;
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-items .peculiar-navigation {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: auto;
+    bottom: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 130px;
+}
+}
+#peculiar .peculiar-items .peculiar-navigation .peculiar-btn__prev,
+#peculiar .peculiar-items .peculiar-navigation .peculiar-btn__next {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-items .peculiar-navigation .peculiar-btn__prev,
+  #peculiar .peculiar-items .peculiar-navigation .peculiar-btn__next {
+    position: static;
+    transform: translateY(0);
+    left: auto;
+    right: auto;
+}
+}
+#peculiar .peculiar-items .peculiar-navigation .peculiar-btn__prev {
+  left: 25px;
+}
+#peculiar .peculiar-items .peculiar-navigation .peculiar-btn__next {
+  right: 25px;
+}
+#peculiar article {
+  padding: 0 70px;
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 992px) {
+#peculiar article {
+    grid-template-columns: 1fr;
+}
+}
+@media (max-width: 576px) {
+#peculiar article {
+    padding: 0 14px;
+}
+}
+#peculiar .peculiar-wrapper__image {
+  height: 100%;
+}
+#peculiar .peculiar-wrapper__image img {
+  width: 100%;
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-wrapper__image img {
+    max-width: 350px;
+    width: 100%;
+    margin: 24px auto;
+    display: block;
+}
+}
+#peculiar .peculiar-wrapper__content {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  padding: 60px 0;
+}
+@media (max-width: 1366px) {
+#peculiar .peculiar-wrapper__content {
+    column-gap: 40px;
+}
+}
+@media (max-width: 1280px) {
+#peculiar .peculiar-wrapper__content {
+    column-gap: 30px;
+    padding: 40px 0px;
+}
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-wrapper__content {
+    column-gap: 0px;
+    padding: 0px 0px 88px;
+    max-width: 520px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+#peculiar .peculiar-wrapper__content .content-line {
+  height: 100%;
+  background: #cecece;
+  width: 2px;
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-wrapper__content .content-line {
+    display: none;
+}
+}
+#peculiar .peculiar-wrapper__content .content-content h4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+}
+@media (max-width: 1024px) {
+#peculiar .peculiar-wrapper__content .content-content h4 {
+    margin-bottom: 24px;
+}
+}
+@media (max-width: 768px) {
+#peculiar .peculiar-wrapper__content .content-content h4 {
+    font-size: 20px;
+    line-height: 27px;
+}
+}
+#peculiar .peculiar-wrapper__content .content-content p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2b2b2b;
+  font-size: calc(0.0043149946 * 100vw + 13.715210356px);
+}
+@media (min-width: 1921px) {
+#peculiar .peculiar-wrapper__content .content-content p {
+    font-size: 22px;
+}
+}
+@media (max-width: 993px) {
+#peculiar .peculiar-wrapper__content .content-content p {
+    font-size: 18px;
+}
+}
+@media (max-width: 768px) {
+#peculiar .peculiar-wrapper__content .content-content p {
+    font-size: 16px;
+    line-height: 19px;
+}
+}
+#peculiar .peculiar-wrapper__content .content-content p span {
+  font-weight: 700;
+}
+#peculiar .peculiar-wrapper .img--bottom {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+#peculiar .peculiar-wrapper .img--bottom img {
+  display: block;
+  width: 94%;
+  margin-right: auto;
+}
+#peculiar .peculiar-wrapper .img--full img {
+  height: 100%;
+}
+@media (max-width: 992px) {
+#peculiar .peculiar-wrapper .img--full img {
+    height: auto;
+    margin-bottom: -20px;
+}
+}
+
+/*# sourceMappingURL=src_vue_components_Peculiar_vue.min.css.map*/

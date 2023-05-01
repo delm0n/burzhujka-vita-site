@@ -1,0 +1,230 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/HeatingItem.vue?vue&type=style&index=0&id=67772964&lang=scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+article.heating-item .heating-item-container {
+  background: #ffffff;
+  border: 3px solid #ececec;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+article.heating-item {
+  height: auto;
+}
+article.heating-item .heating-item-container {
+  height: 100%;
+  padding: 40px;
+}
+@media (max-width: 1280px) {
+article.heating-item .heating-item-container {
+    padding: 30px 20px;
+}
+}
+@media (max-width: 1024px) {
+article.heating-item .heating-item-container {
+    padding: 25px 14px 30px;
+}
+}
+@media (max-width: 992px) {
+article.heating-item .heating-item-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 34px 34px 88px;
+}
+}
+@media (max-width: 768px) {
+article.heating-item .heating-item-container {
+    max-width: 520px;
+}
+}
+@media (max-width: 576px) {
+article.heating-item .heating-item-container {
+    padding: 24px 14px 88px;
+}
+}
+.heating-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 992px) {
+.heating-wrap {
+    max-width: 520px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+.heating-wrap__image {
+  width: 100%;
+}
+.heating-wrap__image img {
+  width: 100%;
+}
+@media (max-width: 992px) {
+.heating-wrap__image img {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    width: 92%;
+}
+}
+@media (max-width: 425px) {
+.heating-wrap__image img {
+    width: auto;
+}
+}
+.heating-wrap__features h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 115%;
+  color: #2b2b2b;
+  margin: 20px 0;
+  font-size: calc(0.0043149946 * 100vw + 15.715210356px);
+}
+@media (min-width: 1921px) {
+.heating-wrap__features h3 {
+    font-size: 24px;
+}
+}
+@media (max-width: 993px) {
+.heating-wrap__features h3 {
+    font-size: 20px;
+}
+}
+@media (max-width: 1280px) {
+.heating-wrap__features h3 {
+    margin-top: 0;
+}
+}
+.heating-wrap__features .features-item {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+.heating-wrap__features .features-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+.heating-wrap__features .features-item:not(:last-child) {
+    margin-bottom: 18px;
+}
+}
+@media (max-width: 576px) {
+.heating-wrap__features .features-item:not(:last-child) {
+    margin-bottom: 22px;
+}
+}
+.heating-wrap__features .features-item svg {
+  margin-top: 2px;
+}
+@media (max-width: 1366px) {
+.heating-wrap__features .features-item svg {
+    width: 24px;
+    height: 24px;
+}
+}
+@media (max-width: 576px) {
+.heating-wrap__features .features-item svg {
+    width: 21px;
+    height: 21px;
+    margin-top: 0px;
+}
+}
+.heating-wrap__features .features-item p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 125%;
+  color: #323232;
+  font-size: calc(0.0064724919 * 100vw + 9.572815534px);
+}
+@media (min-width: 1921px) {
+.heating-wrap__features .features-item p {
+    font-size: 22px;
+}
+}
+@media (max-width: 993px) {
+.heating-wrap__features .features-item p {
+    font-size: 16px;
+}
+}
+@media (max-width: 576px) {
+.heating-wrap__features .features-item p {
+    font-size: 16px;
+    line-height: 19px;
+}
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/Heating.vue?vue&type=style&index=0&id=25d371ca&lang=scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+@media (min-width: 993px) {
+#heating .heating-container {
+    max-width: 1610px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+}
+#heating .heating-items {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100px;
+}
+@media (max-width: 992px) {
+#heating .heating-items {
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+}
+@media (max-width: 576px) {
+#heating .heating-items {
+    padding: 0 10px 60px;
+}
+}
+@media (min-width: 993px) {
+#heating .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+}
+@media (min-width: 993px) and (max-width: 1280px) {
+#heating .swiper-wrapper {
+    gap: 20px;
+}
+}
+@media (min-width: 993px) and (max-width: 1024px) {
+#heating .swiper-wrapper {
+    gap: 15px;
+}
+}
+#heating .heating-navigation {
+  display: none;
+}
+@media (max-width: 992px) {
+#heating .heating-navigation {
+    display: flex;
+    position: absolute;
+    bottom: 84px;
+    gap: 35px;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+}
+}
+
+/*# sourceMappingURL=src_vue_components_Heating_vue.min.css.map*/

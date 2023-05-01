@@ -5,7 +5,7 @@ import Dostavka from "../views/Dostavka.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: "/index.html",
     name: "main",
     component: Main,
   },

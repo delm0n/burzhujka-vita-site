@@ -1,0 +1,115 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/FAQ.vue?vue&type=style&index=0&id=a11f6e82&lang=scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#faq .accordion-menu {
+  background: #ffffff;
+  border: 3px solid #ececec;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+#faq {
+  padding-bottom: 100px;
+}
+@media (max-width: 992px) {
+#faq {
+    padding-bottom: 80px;
+}
+}
+@media (max-width: 768px) {
+#faq {
+    padding-bottom: 60px;
+}
+}
+@media (max-width: 425px) {
+#faq .title h2 {
+    font-size: 24px;
+    line-height: 30px;
+}
+}
+#faq .accordions {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+#faq .accordions {
+    gap: 30px;
+}
+}
+@media (max-width: 576px) {
+#faq .accordions {
+    gap: 18px;
+}
+}
+#faq .accordion-menu {
+  border-radius: 10px;
+  padding: 24px 60px;
+  cursor: pointer;
+  user-select: none;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+#faq .accordion-menu {
+    padding: 14px;
+    min-height: 70px;
+}
+}
+#faq .accordion-menu h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #2b2b2b;
+}
+@media (max-width: 768px) {
+#faq .accordion-menu h3 {
+    font-size: 16px;
+    line-height: 19px;
+}
+}
+#faq .accordion-content {
+  height: 0;
+  overflow: hidden;
+}
+#faq .accordion-content__wrap {
+  padding: 60px 60px 20px;
+}
+@media (max-width: 768px) {
+#faq .accordion-content__wrap {
+    padding: 30px 10px 0;
+}
+}
+@media (max-width: 576px) {
+#faq .accordion-content__wrap {
+    padding: 18px 10px 0;
+}
+}
+#faq .accordion-content p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 31px;
+  color: #2b2b2b;
+}
+@media (max-width: 768px) {
+#faq .accordion-content p {
+    font-size: 16px;
+    line-height: 19px;
+}
+}
+
+/*# sourceMappingURL=src_vue_components_FAQ_vue.min.css.map*/

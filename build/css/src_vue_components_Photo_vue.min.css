@@ -1,0 +1,134 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/Photo.vue?vue&type=style&index=0&id=47325cca&lang=scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#photo {
+  padding-bottom: 100px;
+}
+@media (max-width: 992px) {
+#photo {
+    padding-bottom: 80px;
+}
+}
+@media (max-width: 768px) {
+#photo {
+    padding-bottom: 60px;
+}
+}
+#photo .photos-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1280px) {
+#photo .photos-wrapper {
+    gap: 20px;
+}
+}
+@media (max-width: 1024px) {
+#photo .photos-wrapper {
+    gap: 15px;
+}
+}
+@media (max-width: 992px) {
+#photo .photos-wrapper {
+    gap: 12px;
+}
+}
+@media (max-width: 576px) {
+#photo .photos-wrapper {
+    gap: 7px;
+}
+}
+#photo .photos-wrapper .photo-container {
+  display: block;
+  width: 100%;
+  border: 3px solid #cecece;
+  border-radius: 40px;
+  overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+}
+@media (max-width: 992px) {
+#photo .photos-wrapper .photo-container {
+    border-radius: 16px;
+    border: 2px solid #cecece;
+}
+}
+@media (max-width: 475px) {
+#photo .photos-wrapper .photo-container {
+    border: 1px solid #cecece;
+    border-radius: 9px;
+}
+}
+#photo .photos-wrapper .photo-container img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.6s;
+}
+#photo .photos-wrapper .photo-container:hover img {
+  transform: translateX(-50%) scale(1.05);
+}
+#photo .photos-wrapper .photo-container-1 {
+  grid-row: 1/11;
+}
+#photo .photos-wrapper .photo-container-1 img {
+  position: static;
+  left: 0;
+  transform: translateX(0);
+  width: 100%;
+  height: auto;
+}
+#photo .photos-wrapper .photo-container-1:hover img {
+  transform: translateX(0) scale(1.05);
+}
+#photo .photos-wrapper .photo-container-2 {
+  grid-row: 1/10;
+}
+#photo .photos-wrapper .photo-container-2 img {
+  left: 0;
+  transform: translateX(0);
+}
+#photo .photos-wrapper .photo-container-2:hover img {
+  transform: translateX(0) scale(1.05);
+}
+@media (max-width: 768px) {
+#photo .photos-wrapper .photo-container-2 {
+    grid-row: 1/9;
+}
+#photo .photos-wrapper .photo-container-2 img {
+    width: 99%;
+    height: auto;
+    transform: translateX(0) translateY(-15%);
+}
+#photo .photos-wrapper .photo-container-2:hover img {
+    transform: translateX(0) translateY(-15%) scale(1.05);
+}
+}
+#photo .photos-wrapper .photo-container-3 {
+  grid-row: 1/12;
+}
+#photo .photos-wrapper .photo-container-4 {
+  grid-row: 11/21;
+}
+#photo .photos-wrapper .photo-container-5 {
+  grid-row: 10/21;
+}
+@media (max-width: 768px) {
+#photo .photos-wrapper .photo-container-5 {
+    grid-row: 9/21;
+}
+}
+#photo .photos-wrapper .photo-container-6 {
+  grid-row: 12/21;
+}
+
+/*# sourceMappingURL=src_vue_components_Photo_vue.min.css.map*/

@@ -1,0 +1,43 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/ButtonUp.vue?vue&type=style&index=0&id=4b587a14&lang=scss&scoped=true ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.button-up[data-v-4b587a14] {
+  z-index: 200;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 66px;
+  height: 66px;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  background-image: url("/build/images/arrowUp.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 27px;
+  background-color: #468217;
+  border-radius: 100%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: opacity 200ms, transform 0.6s ease;
+}
+.button-up[data-v-4b587a14]:active {
+  transform: translateY(3px);
+}
+.button-up.show[data-v-4b587a14] {
+  opacity: 1;
+}
+.button-up.hide[data-v-4b587a14] {
+  opacity: 0;
+}
+@media (max-width: 992px) {
+.button-up[data-v-4b587a14] {
+    right: 15px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    background-size: 19px;
+}
+}
+
+/*# sourceMappingURL=src_vue_components_ButtonUp_vue.min.css.map*/

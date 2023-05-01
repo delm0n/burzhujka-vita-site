@@ -1,0 +1,375 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/DeliveryForm.vue?vue&type=style&index=0&id=dd717b02&lang=scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.delivery-form .button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 78px;
+  transition: transform 0.3s ease-in;
+  border-radius: 40px;
+}
+@media (max-width: 992px) {
+.delivery-form .button {
+    width: 230px;
+    height: 65px;
+}
+}
+@media (max-width: 576px) {
+.delivery-form .button {
+    width: 150px;
+    height: 40px;
+}
+}
+.delivery-form .button .button-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #468217;
+  transform-origin: center;
+  transition: all 0.2s ease;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0);
+  z-index: 2;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.delivery-form .button .button-background.button-animation::before {
+  content: "";
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  transform: translateX(-125%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 25%, hsla(0, 0%, 84%, 0.25) 51%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0));
+  filter: blur(2px);
+  transition: opacity 1s ease;
+  animation: sheen 3s forwards infinite;
+}
+.delivery-form .button .button-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  color: #ffffff;
+  z-index: 3;
+  position: relative;
+}
+@media (max-width: 992px) {
+.delivery-form .button .button-text {
+    font-size: 18px;
+}
+}
+@media (max-width: 576px) {
+.delivery-form .button .button-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+}
+.delivery-form .button:not(:disabled):hover .button-background, .delivery-form .button:not(:disabled):focus .button-background {
+  transition: all 0.2s ease-in 0.1s;
+  background-color: #417915;
+  box-shadow: 0px 6px 24px rgba(70, 130, 23, 0.39);
+}
+.delivery-form .button:not(:disabled):hover .button-background::before, .delivery-form .button:not(:disabled):focus .button-background::before {
+  opacity: 0;
+}
+.delivery-form .button:not(:disabled):hover .button-background {
+  transform: scale(0.96);
+}
+.delivery-form .button:not(:disabled):active {
+  transform: translateY(3px);
+}
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+.delivery-form .button:disabled .button-background {
+  background-color: rgba(95, 95, 95, 0.8784313725);
+}
+.delivery-form h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+.delivery-form h3 {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 500;
+    text-align: center;
+    margin: -10px auto 10px;
+}
+}
+.delivery-form .button {
+  margin: 40px auto 0;
+  width: 263px;
+}
+@media (max-width: 576px) {
+.delivery-form .button {
+    width: 145px;
+    height: 45px;
+    margin-top: 24px;
+}
+}
+.delivery-form .user-info {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+}
+@media (max-width: 576px) {
+.delivery-form .user-info {
+    gap: 10px;
+    max-width: 330px;
+    margin: 0 auto;
+}
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-2.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/Delivery.vue?vue&type=style&index=0&id=383fcd1b&lang=scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes sheen {
+100% {
+    transform: translateX(100%);
+}
+}
+#delivery .delivery-wrapper__features .features-item {
+  background: #ffffff;
+  border: 3px solid #ececec;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+#delivery {
+  padding-bottom: 100px;
+}
+@media (max-width: 992px) {
+#delivery {
+    padding-bottom: 80px;
+}
+}
+@media (max-width: 768px) {
+#delivery {
+    padding-bottom: 60px;
+}
+}
+#delivery .delivery-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+@media (max-width: 1440px) {
+#delivery .delivery-wrapper {
+    gap: 20px;
+}
+}
+@media (max-width: 1280px) {
+#delivery .delivery-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+}
+@media (max-width: 425px) {
+#delivery .delivery-wrapper {
+    gap: 18px;
+}
+}
+#delivery .delivery-wrapper__form {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__form {
+    max-width: 425px;
+}
+}
+#delivery .delivery-wrapper__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+@media (max-width: 1440px) {
+#delivery .delivery-wrapper__features {
+    gap: 20px;
+}
+}
+@media (max-width: 1280px) {
+#delivery .delivery-wrapper__features {
+    max-width: max-content;
+    margin: 0 auto;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    max-width: 330px;
+}
+}
+@media (max-width: 576px) {
+#delivery .delivery-wrapper__features {
+    gap: 10px;
+}
+}
+#delivery .delivery-wrapper__features .features-item {
+  display: flex;
+  flex: 1 1 0;
+  max-width: 330px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 20px 45px;
+}
+@media (max-width: 1280px) {
+#delivery .delivery-wrapper__features .features-item {
+    max-width: 260px;
+    gap: 25px;
+}
+}
+@media (max-width: 992px) {
+#delivery .delivery-wrapper__features .features-item {
+    padding: 24px 10px 45px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    max-width: 100%;
+}
+}
+@media (max-width: 576px) {
+#delivery .delivery-wrapper__features .features-item {
+    padding: 24px 14px;
+    padding-left: 7%;
+    gap: 18px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__svg {
+    flex-shrink: 0;
+}
+}
+#delivery .delivery-wrapper__features .features-item__svg svg {
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 1440px) {
+#delivery .delivery-wrapper__features .features-item__svg svg {
+    width: 80px;
+}
+}
+@media (max-width: 1280px) {
+#delivery .delivery-wrapper__features .features-item__svg svg {
+    width: 70px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__svg svg {
+    width: 50px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__line {
+    height: 100%;
+}
+}
+@media (max-width: 992px) {
+#delivery .delivery-wrapper__features .features-item__line .gorizontal-line {
+    width: 90%;
+    margin: 0 auto;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__line .gorizontal-line {
+    height: 100%;
+    width: 2px;
+}
+}
+#delivery .delivery-wrapper__features .features-item__content h4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  color: #2b2b2b;
+  margin-bottom: 14px;
+  white-space: nowrap;
+  font-size: calc(0.0043149946 * 100vw + 13.715210356px);
+}
+#delivery .delivery-wrapper__features .features-item__content h4 br {
+  display: none;
+}
+@media (min-width: 1921px) {
+#delivery .delivery-wrapper__features .features-item__content h4 {
+    font-size: 22px;
+}
+}
+@media (max-width: 993px) {
+#delivery .delivery-wrapper__features .features-item__content h4 {
+    font-size: 18px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__content h4 {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+#delivery .delivery-wrapper__features .features-item__content h4 br {
+    display: block;
+}
+}
+#delivery .delivery-wrapper__features .features-item__content p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #2b2b2b;
+  white-space: nowrap;
+  font-size: calc(0.0043149946 * 100vw + 11.715210356px);
+}
+@media (min-width: 1921px) {
+#delivery .delivery-wrapper__features .features-item__content p {
+    font-size: 20px;
+}
+}
+@media (max-width: 993px) {
+#delivery .delivery-wrapper__features .features-item__content p {
+    font-size: 16px;
+}
+}
+@media (max-width: 768px) {
+#delivery .delivery-wrapper__features .features-item__content p {
+    font-size: 14px;
+    text-align: left;
+    line-height: 17px;
+}
+}
+
+/*# sourceMappingURL=src_vue_components_Delivery_vue.min.css.map*/
