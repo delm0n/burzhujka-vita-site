@@ -1,10 +1,13 @@
 <template>
-  <HeaderTop :path="'main'" />
-  <Main />
+  <HeaderTop :path="$route.name" />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <Map />
-  <Footer :path="'main'" />
+  <Footer :path="$route.name" />
   <ButtonUp />
-  <ModalSuccess />
 </template>
 
 <script>
@@ -21,7 +24,6 @@ export default {
       import("./components/ModalSuccess.vue")
     ),
     Map: defineAsyncComponent(() => import("./components/Map.vue")),
-    Main: defineAsyncComponent(() => import("./views/Main.vue")),
   },
 };
 </script>
