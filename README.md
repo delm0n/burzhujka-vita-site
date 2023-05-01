@@ -1,8 +1,6 @@
 # burzhujka-vita HELICON 2023
-
-<br>
 tags: vue, vuex, vue-router, gsap, fancybox, typescript, webpack, tippy.js, swiper
-<br>
+
 <br>
 pages: https://delm0n.github.io/burzhujka-vita-site/
 <br>
