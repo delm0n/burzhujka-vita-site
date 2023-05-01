@@ -6,7 +6,7 @@
     class="button-up hide"
     v-on:click="srollToTop"
   ></button>
-</template>  
+</template>
 
 <script>
 export default {
@@ -40,7 +40,7 @@ export default {
   height: 66px;
   padding: 0;
   box-shadow: 0 0 10px rgb(0, 0, 0, 25%);
-  background-image: url("/build/images/arrowUp.svg");
+  background: url(../images/arrowUp.svg) no-repeat;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 27px;
