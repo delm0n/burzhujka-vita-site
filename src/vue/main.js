@@ -15,11 +15,11 @@ import "swiper/scss/effect-coverflow";
 
 //vuex хранилище, свзязывающее компоненты
 import store from "./store/store.js";
-import router from "./router/index.ts";
+// import router from "./router/index.ts";
 
 createApp(App)
   .use(store)
-  .use(router)
+  // .use(router)
   .mixin({
     created: function () {
       this.gsap = gsap;
