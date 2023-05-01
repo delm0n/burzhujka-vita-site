@@ -1,0 +1,156 @@
+@mixin plexFont($root) {
+  /* ibm-plex-sans-100 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 100;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-100.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-200 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 200;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-200.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-300 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-300.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-regular - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-regular.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-500 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-500.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-600 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-600.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-700 - cyrillic */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.eot"); /* IE9 Compat Modes */
+    src: url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.woff")
+        format("woff"),
+      /* Modern Browsers */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url($root + "/static/fonts/ibm-plex-sans/ibm-plex-sans-v14-cyrillic-700.svg#IBMPlexSans")
+        format("svg"); /* Legacy iOS */
+  }
+}
