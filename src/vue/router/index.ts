@@ -10,19 +10,19 @@ const routes: Array<RouteRecordRaw> = [
     component: Main,
   },
   {
-    path: "/burzhujka-vita-site/opt/",
+    path: "/opt",
     name: "opt",
     component: Opt,
   },
   {
-    path: "/burzhujka-vita-site/dostavka/",
+    path: "/dostavka",
     name: "dostavka",
     component: Dostavka,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/burzhujka-vita-site/"),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
