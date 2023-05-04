@@ -3,7 +3,12 @@
     <div class="heating-item-container">
       <div class="heating-wrap">
         <div class="heating-wrap__image">
-          <ImageLazy :src="heat.img.src" :alt="heat.img.alt" :srcMedia="425" />
+          <ImageLazy
+            :animation="false"
+            :src="heat.img.src"
+            :alt="heat.img.alt"
+            :srcMedia="425"
+          />
         </div>
         <div class="gorizontal-line"></div>
         <div class="heating-wrap__features">
@@ -90,7 +95,7 @@ article.heating-item {
     width: 100%;
     img {
       width: 100%;
-
+      aspect-ratio: 1/1;
       @media (max-width: 992px) {
         max-width: 400px;
         margin: 0 auto;

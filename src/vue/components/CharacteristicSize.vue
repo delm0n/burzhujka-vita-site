@@ -75,7 +75,7 @@
             <div class="char-wrap">
               <div class="char-wrap__row">
                 <div class="char-wrap__item">
-                  <h3>Габариты —  </h3>
+                  <h3>Габариты:  </h3>
                   <p class="profile-subtitle profile-subtitle__first">
                     в собранном виде —
                     <span
@@ -100,7 +100,7 @@
 
                 <div class="char-wrap__item">
                   <h3>
-                    Толщина стали СТ3 —
+                    Толщина стали СТ3:
                     <span v-html="objectPech[activePech].density"></span>
                   </h3>
                   <p>
@@ -115,8 +115,7 @@
               <div class="char-wrap__row">
                 <div class="char-wrap__item">
                   <h3>
-                    Отапливаемая площадь — до
-                    <span
+                    Отапливаемая площадь: до&nbsp;<span
                       class="span--animation"
                       v-html="objectPech[activePech].square"
                     ></span>
@@ -141,7 +140,7 @@
               <div class="char-wrap__row">
                 <div class="char-wrap__item">
                   <h3>
-                    Вес — до
+                    Вес: до
                     <span
                       class="span--animation"
                       v-html="objectPech[activePech].weight"
@@ -155,7 +154,7 @@
 
                 <div class="char-wrap__item">
                   <h3>
-                    Длина дров —
+                    Длина дров:
                     <span
                       class="span--animation"
                       v-html="objectPech[activePech].firewood"
@@ -169,8 +168,17 @@
 
           <div class="size-wrapper__button">
             <a
+              target="__blank"
+              :href="objectPech[activePech].ozon"
+              class="button button-ozon"
+            >
+              <span class="button-background"></span>
+              <span class="button-text">Купить на OZON</span>
+            </a>
+
+            <a
               @click="openModal(activePech)"
-              class="button"
+              class="button button-order"
               data-fancybox
               href="#modal-order"
             >
@@ -190,8 +198,6 @@ import { defineComponent } from "vue";
 import { characteristicSize } from "../types/PechSize";
 import { PechType } from "../types/IPech";
 
-import buttonAnimated from "../mixins/buttonAnimated";
-
 export default defineComponent({
   data() {
     return {
@@ -200,12 +206,7 @@ export default defineComponent({
       objectPech: characteristicSize,
     };
   },
-  mixins: [buttonAnimated],
-  mounted() {
-    //mixin
-    //@ts-ignore
-    // this.btnAnim(".characteristic-size", ".size-wrapper__button a.button");
-  },
+
   methods: {
     changeActive(bool: PechType) {
       if (this.activeTab != bool) {
@@ -252,7 +253,8 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+
+<style lang="scss" >
 @import "../../scss/_global.scss";
 
 .characteristic-size {
@@ -368,6 +370,10 @@ export default defineComponent({
 
       img {
         width: 100%;
+
+        @media (max-width: 992px) {
+          aspect-ratio: 10 /13;
+        }
       }
 
       @media (max-width: 1439px) {
@@ -429,26 +435,50 @@ export default defineComponent({
       grid-row: 3/4;
       grid-column: 2/3;
 
+      @include flex-center-x(40px);
+      justify-content: end;
+
       @media (max-width: 1439px) {
         grid-row: 3/4;
         grid-column: 1/2;
+        @media (min-width: 993px) {
+          flex-direction: column;
+          gap: 20px;
+        }
       }
 
       @media (max-width: 992px) {
         grid-column: 1/2;
         grid-row: 5/6;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 768px) {
+        gap: 15px;
+        flex-direction: column;
       }
 
       .button {
         @extend %button;
-        margin-left: auto;
-        margin-right: 68px;
-        @media (min-width: 1440px) and (max-width: 1536px) {
-          margin-right: 0;
-        }
 
-        @media (max-width: 1439px) {
-          margin: 0 auto;
+        &.button-ozon {
+          .button-background {
+            background-color: #0085ff;
+            box-shadow: 0px 6px 24px rgba(#0085ff, 0);
+          }
+
+          &:hover,
+          &:focus {
+            .button-background {
+              transition: all 0.2s ease-in 0.1s;
+              background-color: darken(#0085ff, 2%);
+              box-shadow: 0px 6px 24px rgba(#0085ff, 0.39);
+
+              &::before {
+                opacity: 0;
+              }
+            }
+          }
         }
       }
     }

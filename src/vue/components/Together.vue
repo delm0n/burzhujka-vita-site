@@ -5,129 +5,75 @@
         <h2>Вместе — дешевле!</h2>
         <p>При заказе печи-буржуйки скидка на&nbsp;аксессуары</p>
       </div>
-      <form action="" class="spnForm">
-        <div class="together-wrapper">
-          <div class="together-wrapper__dops">
-            <template v-for="(dop, index) in getDops" :key="index">
-              <div class="checkbox dops-item">
-                <input type="checkbox" v-model="dop.active" />
-                <div class="box" @click="dop.active = !dop.active">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="14"
-                    viewBox="0 0 18 14"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 7.56424L5.92308 12.4531L17 1.45312"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
 
-                <ImageLazy
-                  @click="dop.active = !dop.active"
-                  :src="dop.img.src"
-                  :alt="dop.img.alt"
-                />
-
-                <div class="dops-item__content">
-                  <h5 @click="openModal(dop.id, dop.name, dop.img.src)">
-                    {{ dop.name }}
-                  </h5>
-                  <p class="oldprice">{{ dop.oldPrice }} ₽</p>
-                  <p class="price">{{ dop.price }} ₽</p>
-                </div>
+      <div class="together-wrapper">
+        <div class="together-wrapper__dops">
+          <template v-for="(dop, index) in getDops" :key="index">
+            <div class="checkbox dops-item">
+              <input type="checkbox" v-model="dop.active" />
+              <div class="box" @click="dopClick(dop)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="14"
+                  viewBox="0 0 18 14"
+                  fill="none"
+                >
+                  <path
+                    d="M1 7.56424L5.92308 12.4531L17 1.45312"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
-              <template v-if="index != getDops.length - 1">
-                <div class="line"></div>
-              </template>
-            </template>
-          </div>
 
-          <div class="together-wrapper__img">
-            <picture>
-              <source
-                :srcset="
-                  'build/images/x05/' +
-                  img +
+              <ImageLazy
+                @click="dopClick(dop)"
+                :src="dop.img.src"
+                :alt="dop.img.alt"
+              />
+
+              <div class="dops-item__content">
+                <h5 @click="openModal(dop.id, dop.name, dop.img.src)">
+                  {{ dop.name }}
+                </h5>
+                <p class="oldprice">{{ dop.oldPrice }} ₽</p>
+                <p class="price">{{ dop.price }} ₽</p>
+              </div>
+            </div>
+            <template v-if="index != getDops.length - 1">
+              <div class="line"></div>
+            </template>
+          </template>
+        </div>
+
+        <div class="together-wrapper__img">
+          <div class="img-container">
+            <template v-for="(dop, index) in dops" :key="index">
+              <img
+                v-if="dop.img"
+                :class="[
+                  'dops-img image-lazy',
+                  dop.img,
+                  dop.active ? 'dops-img--active' : '',
+                ]"
+                :data-src="
+                  'build/images/' +
+                  dop.img +
                   (getWebp == 'webp' ? '.webp' : '.png')
                 "
-                type="image/webp"
-                media="(max-width: 425px)" />
+                alt="Дополнительно к буржуйке VITA"
+              />
+            </template>
 
-              <img
-                ref="img"
-                :src="
-                  'build/images/' + img + (getWebp == 'webp' ? '.webp' : '.png')
-                "
-                alt="буржуйка VITA"
-            /></picture>
-          </div>
-
-          <div class="together-wrapper__order">
-            <h4>Заказ</h4>
-
-            <div class="line"></div>
-
-            <PechModelCheckbox
-              class="order-model"
-              :icon="true"
-              :spanValue="'Буржуйка '"
-            />
-
-            <div class="line"></div>
-
-            <div class="order-price">
-              <p>Итого к оплате:</p>
-              <div ref="price">{{ price }} ₽</div>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="order-offer">
-              <div class="user-info">
-                <input
-                  class="vita-input"
-                  aria-label="Ваше имя"
-                  type="text"
-                  name="name"
-                  autocomplete="off"
-                  placeholder="Ваше имя"
-                  required
-                />
-                <input
-                  class="vita-input"
-                  aria-label="Ваш номер"
-                  type="tel"
-                  name="phone"
-                  autocomplete="off"
-                  placeholder="Ваш номер телефона"
-                  required
-                />
-              </div>
-              <p>
-                Менеджеры свяжутся с вами в ближайшее время, для уточнения
-                деталей заказа
-              </p>
-
-              <button
-                @click="openModalSuccessManager()"
-                type="submit"
-                class="button"
-              >
-                <span class="button-background"></span>
-                <span class="button-text">Заказать</span>
-              </button>
-            </div>
+            <div class="together-main__container" v-html="img"></div>
           </div>
         </div>
-        <FormHelicon :main="true" />
-      </form>
+
+        <TogetherForm class="together-wrapper__order" />
+      </div>
     </div>
 
     <div v-if="modalContent.title" id="together-modal" style="display: none">
@@ -168,12 +114,9 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
+import TogetherForm from "./TogetherForm.vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
-import FormHelicon from "../helpers/FormHelicon.vue";
-import buttonAnimated from "../mixins/buttonAnimated";
-import PechModelCheckbox from "../helpers/PechModelCheckbox.vue";
-import RassrochkaCheckbox from "../helpers/RassrochkaCheckbox.vue";
 
 export default {
   data() {
@@ -212,6 +155,7 @@ export default {
               par: "термостойкая краска ",
             },
           ],
+          active: false,
         },
 
         {
@@ -231,6 +175,7 @@ export default {
               par: "183x183 мм",
             },
           ],
+          active: false,
         },
 
         {
@@ -251,6 +196,8 @@ export default {
           ],
           decr: "Трубы из стали — легче и долговечнее чугунных. Благодаря небольшому весу, их удобнее закреплять в месте расположения дымохода. Комплектация предусматривает различные варианты соединения труб.",
           decrBottom: "В комплекте 2 трубы длиной 100 см, 2 отвода и зонтик",
+          img: "together-tube",
+          active: false,
         },
 
         {
@@ -270,6 +217,8 @@ export default {
             },
           ],
           decr: "Полезное дополнение для печи-буржуйки, мангала или камина. Кочерга имеет зубья со всех сторон, благодаря которым уголь дробится гораздо эффективнее. Чистите колосник и убирайте продукты горения ещё проще! Изделие выполнено из толстой стали, поэтому прослужит вам целую вечность!",
+          img: "together-coherga",
+          active: false,
         },
 
         {
@@ -289,16 +238,15 @@ export default {
             },
           ],
           decr: "Стальной округлый лист для защиты напольного покрытия от искр, углей и сажи. Попадая на него, искры гаснут, а угли не пачкают пол, поэтому снижается риск возгорания и сохраняется чистота в помещении.",
+          img: "together-list",
+          active: false,
         },
       ],
     };
   },
   methods: {
-    ...mapMutations(["openModalSuccessManager"]),
     openModal(id, title, src) {
       let dop = this.dops.find((el) => el.id.includes(id));
-
-      console.log(dop);
 
       this.modalContent = {
         title: title,
@@ -315,13 +263,18 @@ export default {
         ]);
       }, 10);
     },
+    dopClick(dop) {
+      dop.active = !dop.active;
+      this.dops.forEach((element) => {
+        element.id.includes(dop.id) ? (element.active = dop.active) : "";
+      });
+    },
   },
   computed: {
     ...mapGetters([
       "getDops",
       "getWebp",
       "getPechModelsActive",
-      "getPrice",
       "getDopsDoorActive",
     ]),
 
@@ -330,48 +283,27 @@ export default {
     },
 
     img() {
-      this.gsap.fromTo(
-        this.$refs.img,
-        {
-          opacity: 0,
-          scale: 0.9,
-        },
-        {
-          opacity: 1,
-          duration: 0.6,
-          scale: 1,
-        }
-      );
-      return this.getDopsDoorActive
+      let src = this.getDopsDoorActive
         ? this.pechModel.img.src + "--door"
         : this.pechModel.img.src;
-    },
 
-    price() {
-      this.gsap.fromTo(
-        this.$refs.price,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.8,
-        }
+      return (
+        '<picture><source srcset="build/images/x05/' +
+        src +
+        (this.getWebp == "webp" ? ".webp" : ".png") +
+        '" media="(max-width:992px)" type="image/' +
+        (this.getWebp == "webp" ? "webp" : "png") +
+        '">' +
+        '<img class="together-main" src="build/images/' +
+        src +
+        (this.getWebp == "webp" ? ".webp" : ".png") +
+        '"alt="буржуйка VITA"/></picture>'
       );
-
-      return this.getPrice.toLocaleString();
     },
   },
   components: {
+    TogetherForm,
     ImageLazy,
-    FormHelicon,
-    PechModelCheckbox,
-    RassrochkaCheckbox,
-  },
-  mixins: [buttonAnimated],
-  mounted() {
-    //mixin
-    // this.btnAnim("#together ", "button.button");
   },
 };
 </script>
@@ -388,49 +320,25 @@ export default {
     }
   }
 
-  @media (max-width: 992px) {
-    .vita-input {
-      padding: 12px 14px;
-      font-size: 14px;
-      line-height: 16px;
-      border-radius: 6px;
-    }
-
-    .order-offer button {
-      @media (min-width: 577px) {
-        width: 196px !important;
-        height: 56px !important;
-      }
-    }
-
-    .checkbox {
-      div.box {
-        width: 20px;
-        height: 20px;
-
-        svg {
-          width: 14px;
-          height: 12px;
-        }
-      }
-    }
-  }
-
   .together-wrapper {
-    display: flex;
+    @include flex-center-x(20px);
     width: 100%;
 
-    @media (max-width: 1439px) {
+    @media (min-width: 1581px) {
+      padding-top: 64px;
+    }
+
+    @media (max-width: 1250px) {
       flex-wrap: wrap;
       justify-content: space-between;
 
       max-width: 1050px;
       margin: 0 auto;
-      row-gap: 50px;
+      gap: 40px;
     }
 
     @media (max-width: 992px) {
-      row-gap: 35px;
+      gap: 30px;
     }
 
     @media (max-width: 767px) {
@@ -446,42 +354,49 @@ export default {
 
     &__dops {
       @extend %shadow-block;
-      padding: 10px 20px;
-      max-width: 470px;
-      min-width: 200px;
+      padding: 10px 20px 20px;
+      max-width: 457px;
+      min-width: 375px;
+
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      @media (max-width: 1250px) and (min-width: 576px) {
+        gap: 10px;
+      }
 
       @media (max-width: 767px) {
         width: 100%;
         max-width: 390px;
         margin: 0 auto;
+        min-width: auto;
       }
 
       .dops-item {
-        padding: 30px 0;
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: 95%;
         gap: 25px;
+        margin-left: auto;
 
-        @media (max-width: 1439px) {
-          padding: 20px 0;
-        }
-        @media (max-width: 1280px) {
+        @media (max-width: 1440px) {
           img {
             max-width: 100px;
           }
         }
         @media (max-width: 992px) {
           gap: 15px;
-          padding: 15px 0;
           img {
             max-width: 85px;
           }
         }
 
         @media (max-width: 576px) {
-          gap: 10px;
+          // gap: 10px;
           padding: 8px 0;
+          width: 100%;
         }
 
         &__content {
@@ -507,7 +422,7 @@ export default {
               margin-bottom: 8px;
             }
 
-            @include fluidFontSize(18, 24, 320, 1920);
+            @include fluidFontSize(18, 22, 320, 1920);
           }
           p {
             font-family: "Roboto";
@@ -545,216 +460,150 @@ export default {
 
     &__order {
       @extend %shadow-block;
-      max-width: 470px;
+      max-width: 410px;
       min-width: 200px;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 38px;
 
-      .line {
-        @media (max-width: 1439px) and (min-width: 767px) {
-          height: 90%;
-          grid-column: 2/3;
-          align-self: center;
-          grid-row: 2/4;
-        }
-      }
-
-      @media (max-width: 1439px) and (min-width: 767px) {
+      @media (max-width: 1250px) and (min-width: 767px) {
         max-width: 100%;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1px 1fr;
-        gap: 20px;
-      }
-
-      @media (max-width: 992px) {
-        padding: 24px 20px;
       }
 
       @media (max-width: 767px) {
-        width: 100%;
         max-width: 390px;
         margin: 0 auto;
-        gap: 16px;
-      }
-
-      h4 {
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 35px;
-        text-align: center;
-        color: #323232;
-
-        @media (max-width: 1439px) {
-          grid-column: 1/4;
-        }
-
-        @media (max-width: 767px) {
-          font-size: 22px;
-          line-height: 26px;
-        }
-      }
-
-      .order-price {
-        @media (max-width: 1439px) {
-          grid-row: 3/4;
-          grid-column: 1/2;
-        }
-        p {
-          font-family: "Roboto";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 30px;
-          line-height: 115%;
-          margin-top: 12px;
-          text-align: center;
-          color: #2b2b2b;
-
-          @media (max-width: 992px) {
-            font-size: 22px;
-            margin-top: 0;
-          }
-
-          @include fluidFontSize(22, 30, 320, 1920);
-        }
-        div {
-          font-family: "Roboto";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 60px;
-          line-height: 115%;
-          text-align: center;
-          color: #2b2b2b;
-
-          @media (max-width: 768px) {
-            font-size: 28px;
-          }
-
-          @include fluidFontSize(28, 60, 320, 1920);
-        }
-      }
-
-      .order-model {
-        .checkbox span {
-          font-size: 24px;
-          font-weight: 500;
-        }
-
-        @media (max-width: 1439px) and (min-width: 768px) {
-          width: max-content;
-          margin: 0 auto;
-        }
-
-        @media (max-width: 992px) {
-          .icon-container {
-            img {
-              max-width: 55px;
-              display: block;
-            }
-          }
-          .checkbox span {
-            font-size: 20px;
-          }
-        }
-
-        @media (max-width: 345px) {
-          .checkbox span {
-            line-height: 23px;
-            width: min-content;
-          }
-        }
-      }
-
-      .order-offer {
-        @media (max-width: 1439px) {
-          grid-row: 2/4;
-          grid-column: 3/4;
-          align-self: center;
-        }
-        .user-info {
-          display: flex;
-          gap: 14px;
-          flex-direction: column;
-
-          @media (max-width: 1439px) {
-            max-width: 430px;
-            margin: 0 auto;
-          }
-
-          @media (max-width: 576px) {
-            gap: 10px;
-          }
-        }
-
-        p {
-          font-family: "Roboto";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 150%;
-          text-align: center;
-          color: #707070;
-          margin: 14px auto 24px;
-          max-width: 430px;
-          @media (max-width: 992px) {
-            line-height: 14px;
-            font-size: 12px;
-          }
-        }
-
-        button {
-          @extend %button;
-          margin: 0 auto;
-        }
       }
     }
 
     &__img {
-      max-width: 570px;
-      min-width: 325px;
-      align-self: center;
+      align-self: stretch;
       flex-grow: 1;
+      min-width: 400px;
 
-      @media (max-width: 1439px) {
-        align-self: auto;
-        flex-grow: 0;
-        @media (min-width: 993px) {
-          padding-right: 4%;
+      @media (max-width: 1250px) {
+        max-width: 430px;
+        min-width: auto;
+
+        @media (min-width: 922px) {
+          margin-right: 5%;
         }
+      }
+
+      @media (max-width: 992px) {
+        max-width: 370px;
       }
 
       @media (max-width: 767px) {
+        width: 100%;
+        max-width: 290px;
         margin: 0 auto;
-        min-width: auto;
+        height: 420px;
       }
 
-      img {
-        width: 82%;
-        display: block;
-        margin: 0 auto;
+      .img-container {
+        position: relative;
+        height: 100%;
 
-        @media (min-width: 767px) {
-          @media (max-width: 1439px) {
-            width: auto;
-            position: sticky;
-            max-height: 540px;
-            top: 150px;
-          }
+        @media (max-width: 1440px) and (min-width: 1251px) {
+          bottom: 10%;
+        }
 
-          @media (max-width: 1024px) {
-            max-height: 48vw;
-            min-height: 340px;
-            top: 120px;
+        @media (max-width: 1250px) and (min-width: 767px) {
+          max-height: 550px;
+          position: sticky;
+          top: 115px;
+        }
+
+        @media (max-width: 992px) and (min-width: 767px) {
+          max-height: 475px;
+          top: 135px;
+        }
+
+        .together-tube {
+          left: 0;
+          bottom: 0;
+          width: 10vw;
+          max-width: 198px;
+          min-width: 65px;
+        }
+
+        .together-coherga {
+          width: 15vw;
+          max-width: 306px;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 7vw;
+          min-width: 144px;
+
+          @media (max-width: 767px) {
+            bottom: 40px;
+            left: 45%;
           }
         }
 
-        @media (max-width: 767px) {
-          max-width: 300px;
+        .together-list {
+          width: 16vw;
+          right: 0;
+          bottom: 0;
+          max-width: 322px;
+          min-width: 125px;
+        }
+
+        .dops-img {
+          position: absolute;
+          display: block;
+          opacity: 0.4;
+          transition: all 0.2s ease-in;
+        }
+
+        .dops-img--active {
+          opacity: 1;
+        }
+
+        .together-main {
+          animation: show 0.6s;
+          display: block;
           width: 100%;
+
+          &__container {
+            position: absolute;
+            left: 50%;
+            bottom: 9vw;
+            @media (min-width: 1921px) {
+              bottom: 175px;
+            }
+            @media (max-width: 1440px) {
+              bottom: 10vw;
+              left: 53%;
+            }
+            width: 79%;
+            transform: translateX(-50%);
+
+            @media (max-width: 1250px) {
+              width: 100%;
+              max-width: 300px;
+            }
+
+            @media (max-width: 992px) {
+              max-width: 290px;
+              bottom: 105px;
+              width: 82%;
+            }
+
+            @media (max-width: 767px) {
+              bottom: 80px;
+            }
+          }
+        }
+
+        @keyframes show {
+          0% {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
       }
     }

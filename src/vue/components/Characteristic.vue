@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "./CharacteristicItem.vue";
+import CharacteristicItem from "../helpers/VitaBlock.vue";
 import { defineComponent } from "vue";
 import { characteristics } from "../types/Characteristic";
 import SwiperSettings from "../mixins/SwiperSettings.js";
@@ -106,6 +106,16 @@ export default defineComponent({
 
     @media (max-width: 576px) {
       max-height: 240px;
+    }
+  }
+
+  .media--img {
+    @media (max-width: 992px) {
+      display: inline;
+
+      img {
+        aspect-ratio: 373/350;
+      }
     }
   }
 }

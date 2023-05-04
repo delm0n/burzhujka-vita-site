@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 import { storePHP } from "./storePHP.js";
 import { storePech } from "./storePech.js";
-import router from "../router/index.ts";
 
 export default createStore({
   modules: {
@@ -57,9 +56,6 @@ export default createStore({
     },
     getModalSuccess(state) {
       return state.modalSuccess;
-    },
-    getRoute(state) {
-      return router.currentRoute.name;
     },
   },
 });

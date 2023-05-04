@@ -12,14 +12,23 @@
             class="swiper-slide peculiar-wrapper"
           >
             <div class="peculiar-wrapper__image">
-              <ImageLazy
-                :class="
-                  index == 0 ? 'img--bottom' : index == 1 ? 'img--full' : ''
-                "
-                :src="peculiar.img.src"
-                :alt="peculiar.img.alt"
-                :srcMedia="992"
-              />
+              <div
+                :class="[
+                  peculiar.img.src == 'peculiars-1'
+                    ? 'img--bottom'
+                    : peculiar.img.src == 'peculiars-7'
+                    ? 'img--left'
+                    : '',
+                  ' img--container',
+                ]"
+              >
+                <ImageLazy
+                  :animation="false"
+                  :src="peculiar.img.src"
+                  :alt="peculiar.img.alt"
+                  :srcMedia="992"
+                />
+              </div>
             </div>
 
             <div class="peculiar-wrapper__content">
@@ -242,6 +251,10 @@ export default defineComponent({
       display: flex;
       align-items: flex-end;
       height: 100%;
+
+      @media (max-width: 992px) {
+        justify-content: center;
+      }
       img {
         display: block;
         width: 94%;
@@ -249,13 +262,25 @@ export default defineComponent({
       }
     }
 
-    .img--full {
+    .img--left {
       img {
-        height: 100%;
+        width: 90%;
+        display: block;
+        margin-left: auto;
         @media (max-width: 992px) {
           height: auto;
           margin-bottom: -20px;
         }
+      }
+    }
+
+    .img--container {
+      @media (max-width: 992px) {
+        min-height: 312px;
+      }
+
+      @media (max-width: 768px) {
+        min-height: 200px;
       }
     }
   }

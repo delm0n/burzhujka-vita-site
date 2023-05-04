@@ -3,9 +3,7 @@
     <div class="container">
       <div class="title">
         <h2>От палатки до садового домика!</h2>
-        <p class="subtitle">
-          Буржуйка «VITA» обогревает&nbsp;до&nbsp;75&nbsp;м³
-        </p>
+        <p class="subtitle">Буржуйка VITA обогревает&nbsp;до&nbsp;75&nbsp;м³</p>
       </div>
 
       <div class="area-wrapper">
@@ -16,6 +14,7 @@
                 :src="item.img.src"
                 :alt="item.img.alt"
                 :srcMedia="992"
+                :animation="false"
               />
             </div>
 
@@ -157,6 +156,10 @@ export default {
 
       img {
         width: 100%;
+        aspect-ratio: 1 / 1;
+        @media (min-width: 993px) {
+          aspect-ratio: 370 / 733;
+        }
       }
 
       @media (max-width: 992px) {

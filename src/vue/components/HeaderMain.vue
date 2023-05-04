@@ -1,116 +1,108 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="header-wrap">
-        <div class="title">
-          <h1>
-            <span class="before">Круглая буржуйка</span>
-            <span class="decr"
-              >Самая дешевая <br />
-              конвекторная печь</span
-            >
-            <span class="name">VITA</span>
-          </h1>
-        </div>
+  <div class="container">
+    <div class="header-wrap">
+      <div class="title">
+        <h1>
+          <span class="before">Круглая буржуйка</span>
+          <span class="decr"
+            >Самая дешевая <br />
+            конвекторная печь</span
+          >
+          <span class="name">VITA</span>
+        </h1>
+      </div>
 
-        <div class="features-wrap">
-          <div class="features">
-            <div class="features-row">
-              <div class="features-item">
-                <h3>Прогрев всего за 15 минут</h3>
-                <p>Повышенный на 23% КПД</p>
-              </div>
-
-              <div class="features-item">
-                <h3>На все случаи жизни</h3>
-                <p>Обогреет палатку, дом, гараж, дачные дома</p>
-              </div>
+      <div class="features-wrap">
+        <div class="features">
+          <div class="features-row">
+            <div class="features-item">
+              <h2>Прогрев всего за 15 минут</h2>
+              <p>Повышенный на 23% КПД</p>
             </div>
 
-            <div class="features-row">
-              <div class="features-item">
-                <h3>Стильный дизайн</h3>
-                <p>
-                  Винтаж, лофт и английская классика — <br />
-                  в&nbsp;одном изделии
-                </p>
-              </div>
-
-              <div class="features-item">
-                <h3>Любые виды топлива</h3>
-                <p>Дрова, уголь, брикеты, пеллеты</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer-wrap">
-          <div class="offer">
-            <a class="button" data-fancybox href="#modal-order">
-              <span class="button-background"></span>
-              <span class="button-text">Заказать</span>
-            </a>
-
-            <div class="prices">
-              <p class="new-price">от 6990 ₽</p>
-              <p class="old-price">11 790 ₽</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="components-wrap">
-          <div class="pech-bg"></div>
-          <div class="components">
-            <div
-              v-for="(item, index) in pluses"
-              v-bind:key="index"
-              :class="'component ' + item.class + ' will-change--active'"
-              @click="tippyModal(item.content)"
-              ref="icons"
-            >
-              <IconPlus :color="Colors.White" />
+            <div class="features-item">
+              <h2>На все случаи жизни</h2>
+              <p>Обогреет палатку, дом, гараж, дачные дома</p>
             </div>
           </div>
 
-          <div class="video-container">
-            <a
-              class="video"
-              data-fancybox
-              href="https://www.youtube.com/watch?v=V8TqI1c2evs"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="110"
-                height="110"
-                viewBox="0 0 110 110"
-                fill="none"
-              >
-                <path
-                  d="M66.4736 53.268C67.807 54.0378 67.807 55.9623 66.4736 56.7321L50.7631 65.8026C49.4298 66.5724 47.7631 65.6101 47.7631 64.0705L47.7631 45.9296C47.7631 44.39 49.4298 43.4277 50.7631 44.1975L66.4736 53.268Z"
-                  fill="#E2BC85"
-                />
-                <circle
-                  opacity="0.7"
-                  cx="55.7235"
-                  cy="54.2763"
-                  r="39.8026"
-                  fill="#E2BC85"
-                />
-                <circle
-                  opacity="0.5"
-                  cx="55"
-                  cy="55"
-                  r="54.5"
-                  stroke="#E2BC85"
-                />
-              </svg>
-
+          <div class="features-row">
+            <div class="features-item">
+              <h2>Стильный дизайн</h2>
               <p>
-                Посмотреть <br />
-                видео
+                Винтаж, лофт и английская классика — <br />
+                в&nbsp;одном изделии
               </p>
-            </a>
+            </div>
+
+            <div class="features-item">
+              <h2>Любые виды топлива</h2>
+              <p>Дрова, уголь, брикеты, пеллеты</p>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="offer-wrap">
+        <div class="offer">
+          <a class="button" data-fancybox href="#modal-order">
+            <span class="button-background"></span>
+            <span class="button-text">Заказать</span>
+          </a>
+
+          <div class="prices">
+            <p class="new-price">от 6990 ₽</p>
+            <p class="old-price">11 790 ₽</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="components-wrap">
+        <div v-bind:class="['pech-bg ', getWebp]"></div>
+        <div class="components">
+          <div
+            v-for="(item, index) in pluses"
+            v-bind:key="index"
+            :class="'component ' + item.class + ' will-change--active'"
+            @click="tippyModal(item.content)"
+            ref="icons"
+          >
+            <IconPlus :color="Colors.White" />
+          </div>
+        </div>
+
+        <div class="video-container" style="height: 100%">
+          <a
+            class="video"
+            data-fancybox
+            href="https://www.youtube.com/watch?v=V8TqI1c2evs"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="110"
+              height="110"
+              viewBox="0 0 110 110"
+              fill="none"
+            >
+              <path
+                d="M66.4736 53.268C67.807 54.0378 67.807 55.9623 66.4736 56.7321L50.7631 65.8026C49.4298 66.5724 47.7631 65.6101 47.7631 64.0705L47.7631 45.9296C47.7631 44.39 49.4298 43.4277 50.7631 44.1975L66.4736 53.268Z"
+                fill="#E2BC85"
+              />
+              <circle
+                opacity="0.7"
+                cx="55.7235"
+                cy="54.2763"
+                r="39.8026"
+                fill="#E2BC85"
+              />
+              <circle opacity="0.5" cx="55" cy="55" r="54.5" stroke="#E2BC85" />
+            </svg>
+
+            <p>
+              Посмотреть <br />
+              видео
+            </p>
+          </a>
         </div>
       </div>
     </div>
@@ -119,11 +111,11 @@
 
 <script lang="ts">
 import HeaderTop from "./HeaderTop.vue";
-import buttonAnimated from "../mixins/buttonAnimated";
 import IconPlus from "../helpers/IconPlus.vue";
 import Colors from "../types/ColorsEnum";
 import { defineComponent } from "vue";
 import tippy from "tippy.js";
+import { mapGetters } from "vuex";
 
 export default defineComponent({
   data() {
@@ -152,7 +144,6 @@ export default defineComponent({
     IconPlus,
     HeaderTop,
   },
-  mixins: [buttonAnimated],
   mounted() {
     window.addEventListener("DOMContentLoaded", () => {
       //@ts-ignore
@@ -170,9 +161,6 @@ export default defineComponent({
               2000
             );
           });
-
-          //mixin
-          // this.btnAnim("header", ".offer a.button");
         },
       });
     });
@@ -213,6 +201,7 @@ export default defineComponent({
       Fancybox.close();
     },
   },
+  computed: mapGetters(["getWebp"]),
 });
 </script>
 
@@ -279,17 +268,13 @@ export default defineComponent({
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 500px auto auto;
-    padding-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
     padding: 130px 0 0px;
-    grid-template-rows: auto 350px auto auto;
+    grid-template-rows: auto 375px auto auto;
   }
 
   @media (max-width: 576px) {
     padding: 100px 0 0px;
+    grid-template-rows: auto 320px auto auto;
   }
 }
 
@@ -357,17 +342,7 @@ h1 {
 
   @media (max-width: 992px) {
     grid-template-columns: 3fr 2fr;
-    column-gap: 5px;
-    max-width: 450px;
     width: 100%;
-    align-items: end;
-
-    @media (min-width: 769px) {
-      margin-left: 40px;
-    }
-  }
-
-  @media (max-width: 768px) {
     max-width: 290px;
     align-items: center;
     gap: 4px;
@@ -381,23 +356,17 @@ h1 {
     &.before {
       grid-column: 1/2;
       grid-row: 1/2;
-
-      @media (max-width: 992px) {
-        grid-column: 1/3;
-        font-size: 50px;
-        line-height: 110%;
-      }
-
       font-family: "Roboto";
       font-style: normal;
       font-weight: 700;
       font-size: 70px;
       line-height: 67px;
 
-      @media (max-width: 768px) {
+      @media (max-width: 992px) {
         font-weight: 700;
         font-size: 28px;
         line-height: 100%;
+        grid-column: 1/3;
       }
     }
 
@@ -415,12 +384,7 @@ h1 {
       @media (max-width: 992px) {
         grid-column: 2/3;
         grid-row: 2/3;
-        font-size: 85px;
-        line-height: 90%;
         margin-top: 0;
-      }
-
-      @media (max-width: 768px) {
         font-weight: 700;
         font-size: 50px;
         line-height: 31px;
@@ -452,7 +416,7 @@ h1 {
       font-size: 30px;
       line-height: 42px;
 
-      @media (max-width: 768px) {
+      @media (max-width: 992px) {
         font-weight: 400;
         font-size: 18px;
         line-height: 120%;
@@ -515,7 +479,7 @@ h1 {
       width: 100%;
     }
 
-    h3 {
+    h2 {
       font-family: "Roboto";
       font-style: normal;
       font-weight: 600;
@@ -641,34 +605,6 @@ h1 {
   }
 }
 
-.pech-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url("../images/pech.webp") no-repeat;
-  background-size: 700px;
-  background-position: top 0 right 16.7%;
-
-  @media (max-width: 1920px) {
-    background-size: contain;
-    background-position: top 0 right 173px;
-  }
-
-  @media (max-width: 1537px) {
-    background-position: top 0 right 145px;
-  }
-
-  @media (max-width: 1366px) {
-    background-position: top 0 right 22px;
-  }
-
-  @media (max-width: 992px) {
-    display: none;
-  }
-}
-
 .components {
   .component {
     position: absolute;
@@ -702,7 +638,7 @@ h1 {
       right: 58vw;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       top: 327px;
     }
 
@@ -736,8 +672,12 @@ h1 {
       left: 49vw;
     }
 
-    @media (max-width: 768px) {
-      top: 396px;
+    @media (max-width: 992px) {
+      top: 431px;
+    }
+
+    @media (max-width: 576px) {
+      top: 387px;
     }
   }
 
@@ -765,7 +705,7 @@ h1 {
       left: 58vw;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       left: 56vw;
       top: 295px;
     }
@@ -774,13 +714,13 @@ h1 {
 
 .video {
   position: absolute;
-  z-index: 6;
+  z-index: 10;
   bottom: 135px;
   left: 50%;
   transform: translateX(-25%);
 
   @media (max-width: 1366px) {
-    bottom: 26px;
+    bottom: 33px;
     left: 73%;
     transform: translateX(-50%);
   }
@@ -835,12 +775,11 @@ h1 {
   }
 
   @media (max-width: 992px) {
-    bottom: 101px;
+    bottom: 42px;
     left: 52%;
 
     &-container {
       position: relative;
-      height: 100%;
     }
 
     p {
@@ -857,11 +796,11 @@ h1 {
   }
 
   @media (max-width: 768px) {
-    bottom: 61px;
+    bottom: 22px;
   }
 
   @media (max-width: 576px) {
-    bottom: 29px;
+    bottom: 7px;
   }
 }
 </style>

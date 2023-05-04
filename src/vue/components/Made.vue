@@ -4,7 +4,7 @@
       <div class="made-items">
         <div class="swiper-wrapper">
           <div
-            v-for="(item, index) in made.slider"
+            v-for="(item, index) in slider"
             :key="index"
             class="swiper-slide"
           >
@@ -16,7 +16,6 @@
           prevClass="made-btn__prev"
           nextClass="made-btn__next"
         />
-        <div class="swiper-pagination made-pagination"></div>
       </div>
       <div class="ref-container">
         <a href="https://helicon-prom.ru/" target="_blank"
@@ -29,22 +28,48 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { made } from "../types/Characteristic";
-import CharacteristicItem from "./CharacteristicItem.vue";
-import {
-  Swiper,
-  Pagination,
-  Navigation,
-  Autoplay,
-  EffectCoverflow,
-} from "swiper";
+import CharacteristicItem from "../helpers/VitaBlock.vue";
+import { Swiper, Navigation } from "swiper";
 import SwiperNavigation from "../helpers/SwiperNavigation.vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
+import IImage from "../types/IImage";
+import IVitaContent from "../types/IVitaContent";
+
+let made: IVitaContent = {
+  title: "Вы заказываете печь-буржуйку напрямую с завода!",
+  subtitle: "Для вас это означает:",
+  anymedia: true,
+  text: [
+    "Без посредников и наценок",
+    "Печки всегда в наличии,  отправка <br> будет&nbsp;незамедлительно",
+    "Вся продукция проходит отдел ОТК — брак исключён",
+    `Мы работаем в соответствии с российским законодательством, а это значит, 
+    что все наши гарантии зафиксированны в <a target="_blank" href="static/uploadupdate/oferta-rus.pdf">"Договоре"</a>`,
+  ],
+};
 
 export default defineComponent({
   data() {
     return {
       made: made,
+      slider: [
+        {
+          src: "made-1",
+          alt: "Закажите печь с завода",
+        },
+        {
+          src: "made-2",
+          alt: "Печь без брака",
+        },
+        {
+          src: "made-3",
+          alt: "Быстрая доставка печей",
+        },
+        {
+          src: "made-4",
+          alt: "Печи дёшево",
+        },
+      ] as Array<IImage>,
     };
   },
   components: {
@@ -56,36 +81,16 @@ export default defineComponent({
   mounted() {
     const myPresentsSwiper = new Swiper(".made-items", {
       loop: true,
-      effect: "coverflow",
-      coverflowEffect: {
-        rotate: 0,
-        scale: 0.85,
-        stretch: 200,
-        modifier: 1,
-        slideShadows: false,
-        depth: 200,
-      },
-      allowTouchMove: false,
       centeredSlides: true,
       slidesPerView: "auto",
       slidesPerGroup: 1,
-      spaceBetween: 0,
+      spaceBetween: 20,
 
       navigation: {
         nextEl: ".made-btn__next",
         prevEl: ".made-btn__prev",
       },
-
-      pagination: {
-        el: ".made-pagination",
-        type: "bullets",
-        clickable: false,
-      },
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      modules: [Pagination, Autoplay, EffectCoverflow, Navigation],
+      modules: [Navigation],
     });
   },
 });
@@ -102,53 +107,46 @@ export default defineComponent({
     transform: translateX(-1%);
   }
 
+  .characteristic-item-container {
+    @media (max-width: 768px) {
+      position: relative;
+      padding: 34px 34px 80px;
+    }
+    @media (max-width: 768px) {
+      position: relative;
+      padding: 24px 14px 80px;
+    }
+  }
+
   .made-items {
+    @media (min-width: 769px) {
+      position: relative;
+    }
     .made-navigation {
-      height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      opacity: 0;
+      width: 99%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
 
-      .made-btn__prev,
-      .made-btn__next {
-        width: 12%;
-        cursor: pointer;
+      @media (max-width: 768px) {
+        top: auto;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: 130px;
       }
     }
 
     .swiper-slide {
-      opacity: 0.5;
-      filter: blur(0.5px);
-      transition: all 0.5s;
-
-      &-active {
-        opacity: 1;
-        filter: blur(0px);
-      }
-    }
-
-    .made-pagination {
-      position: static;
-
-      .swiper-pagination-bullet {
-        background: transparent;
-        border: 2px solid $main;
-        width: 17px;
-        height: 17px;
-        &-active {
-          background: $main;
-        }
-      }
+      border-radius: 10px;
     }
   }
 
   .characteristic-wraper {
-    @media (max-width: 992px) {
-      grid-template-rows: auto auto 11px auto !important;
+    @media (max-width: 567px) {
+      gap: 24px;
     }
   }
 
@@ -158,11 +156,23 @@ export default defineComponent({
     img {
       width: 100%;
       max-width: 500px;
-      margin: 0 auto 20px;
+      margin: 0 auto;
       display: block;
+
+      border-radius: 10px;
 
       @media (max-width: 1280px) {
         width: 80%;
+      }
+
+      @media (max-width: 992px) {
+        aspect-ratio: 208/191;
+      }
+
+      @media (max-width: 425px) {
+        max-width: 100%;
+        aspect-ratio: 85/78;
+        width: auto;
       }
     }
   }
@@ -171,6 +181,12 @@ export default defineComponent({
     p {
       padding-left: calc(14px + 13px);
       position: relative;
+
+      @media (max-width: 375px) {
+        br {
+          display: none;
+        }
+      }
 
       &::before {
         position: absolute;
@@ -207,7 +223,9 @@ export default defineComponent({
       font-style: normal;
       font-weight: 400;
       font-size: 22px;
-      line-height: 26px;
+      line-height: 115%;
+
+      @include fluidFontSize(20, 22, 992, 1920);
     }
   }
 }

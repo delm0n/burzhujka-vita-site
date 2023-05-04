@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "./CharacteristicItem.vue";
+import CharacteristicItem from "../helpers/VitaBlock.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({

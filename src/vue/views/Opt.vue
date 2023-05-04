@@ -1,9 +1,9 @@
 <template>
   <div class="page__body opt-body">
-    <OptBlock />
-    <MadeV2 />
-    <FAQ />
-    <Questions />
+    <opt-block />
+    <made />
+    <vita-faq />
+    <questions />
   </div>
 </template>
 
@@ -13,11 +13,11 @@ import { defineAsyncComponent } from "vue";
 export default {
   components: {
     OptBlock: defineAsyncComponent(() => import("../components/OptBlock.vue")),
-    MadeV2: defineAsyncComponent(() => import("../components/Made-v2.vue")),
+    Made: defineAsyncComponent(() => import("../components/Made.vue")),
     Questions: defineAsyncComponent(() =>
       import("../components/Questions.vue")
     ),
-    FAQ: defineAsyncComponent(() => import("../components/FAQ.vue")),
+    VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },
 };
 </script>

@@ -1,28 +1,28 @@
 <template>
   <div>
-    <Header />
+    <vita-header />
     <main>
-      <CharacteristicSize />
-      <Characteristic />
-      <Heating />
-      <CharacteristicRound />
-      <TinkoffBlock />
-      <Peculiar />
-      <Complectation />
-      <Area />
-      <Together />
-      <Delivery />
-      <FAQ />
-      <MadeV2 />
-      <Feedback />
-      <Photo />
-      <Questions />
+      <characteristic-size />
+      <characteristic />
+      <heating />
+      <characteristic-round />
+      <tinkoff-block />
+      <peculiar />
+      <complectation />
+      <vita-area />
+      <together />
+      <delivery />
+      <vita-faq />
+      <made />
+      <feedback />
+      <photo />
+      <questions />
     </main>
 
-    <ModalCall />
-    <ModalOrder />
-    <ModalSuccess />
-    <ModalFeedback />
+    <modal-call />
+    <modal-order />
+    <modal-success />
+    <modal-feedback />
   </div>
 </template>
 
@@ -32,7 +32,7 @@ import Header from "../components/Header.vue";
 import CharacteristicSize from "../components/CharacteristicSize.vue";
 import Characteristic from "../components/Characteristic.vue";
 import CharacteristicRound from "../components/CharacteristicRound.vue";
-import MadeV2 from "../components/Made-v2.vue";
+import Made from "../components/Made.vue";
 import Complectation from "../components/Complectation.vue";
 
 export default {
@@ -44,14 +44,14 @@ export default {
     CharacteristicRound,
     Peculiar: defineAsyncComponent(() => import("../components/Peculiar.vue")),
     Complectation,
-    Area: defineAsyncComponent(() => import("../components/Area.vue")),
+    VitaArea: defineAsyncComponent(() => import("../components/Area.vue")),
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
-    FAQ: defineAsyncComponent(() => import("../components/FAQ.vue")),
+    VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
     TinkoffBlock: defineAsyncComponent(() =>
       import("../components/TinkoffBlock.vue")
     ),
     Together: defineAsyncComponent(() => import("../components/Together.vue")),
-    MadeV2,
+    Made,
     Feedback: defineAsyncComponent(() => import("../components/Feedback.vue")),
     Photo: defineAsyncComponent(() => import("../components/Photo.vue")),
     ModalCall: defineAsyncComponent(() =>

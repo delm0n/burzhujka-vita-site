@@ -53,7 +53,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ICharacter from "../types/Characteristic";
+import IVitaContent from "../types/IVitaContent";
 import type { PropType } from "vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
 import VideoLazy from "../helpers/VideoLazy.vue";
@@ -61,7 +61,7 @@ import VideoLazy from "../helpers/VideoLazy.vue";
 export default defineComponent({
   props: {
     char: {
-      type: Object as PropType<ICharacter>,
+      type: Object as PropType<IVitaContent>,
       required: true,
     },
     reverse: {
@@ -138,17 +138,6 @@ article.characteristic-item {
       column-gap: 30px;
     }
 
-    // @media (max-width: 992px) {
-    //   grid-template-columns: 1fr;
-    //   grid-template-rows: auto 350px 11px auto;
-    //   gap: 32px;
-    //   @include mobileContent();
-    // }
-
-    // @media (max-width: 576px) {
-    //   grid-template-rows: auto 240px 11px auto;
-    // }
-
     @media (max-width: 992px) {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto 11px auto;
@@ -168,12 +157,7 @@ article.characteristic-item {
         grid-row: 2/3;
         grid-column: 1/2;
         height: 100%;
-        // max-height: 350px;
       }
-
-      // @media (max-width: 576px) {
-      //   max-height: 240px;
-      // }
 
       .media--img {
         img {

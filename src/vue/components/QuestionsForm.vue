@@ -1,5 +1,5 @@
 <template>
-  <form action="" class="question-form">
+  <form action="sendCall.php" method="post" class="spnForm">
     <div class="user-info">
       <input
         class="vita-input"
@@ -26,10 +26,7 @@
       <span class="button-text">Заказать звонок</span>
     </button>
 
-    <p class="decr">
-      Менеджеры свяжутся с вами в ближайшее время, <br />
-      для уточнения деталей заказа
-    </p>
+    <p class="decr">Менеджеры свяжутся с вами для уточнения деталей заказа</p>
     <FormHelicon />
   </form>
 </template>
@@ -37,18 +34,12 @@
 <script>
 import FormHelicon from "../helpers/FormHelicon.vue";
 import { mapMutations } from "vuex";
-import buttonAnimated from "../mixins/buttonAnimated";
 
 export default {
-  mixins: [buttonAnimated],
-
   components: {
     FormHelicon,
   },
   methods: mapMutations(["openModalSuccessManager"]),
-  mounted() {
-    // this.btnAnim(".question-form", "button.button");
-  },
 };
 </script>
 

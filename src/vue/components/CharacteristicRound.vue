@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "./CharacteristicItem.vue";
+import CharacteristicItem from "../helpers/VitaBlock.vue";
 import { defineComponent } from "vue";
 import { round } from "../types/Characteristic";
 
@@ -31,6 +31,12 @@ export default defineComponent({
 
     @media (max-width: 576px) {
       max-height: 240px;
+    }
+  }
+
+  .media--img {
+    @media (max-width: 992px) {
+      display: inline;
     }
   }
 }

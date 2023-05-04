@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Main from "../views/Main.vue";
-import Opt from "../views/Opt.vue";
-import Dostavka from "../views/Dostavka.vue";
+const Dostavka = () => import("../views/Dostavka.vue");
+const Opt = () => import("../views/Opt.vue");
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: "/",
     name: "main",

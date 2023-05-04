@@ -15,7 +15,20 @@ import "swiper/scss/effect-coverflow";
 
 //vuex хранилище, свзязывающее компоненты
 import store from "./store/store.js";
-import router from "./router/index.ts";
+import router from "./router/index.js";
+
+import LazyLoad from "vanilla-lazyload";
+
+let lazyLoadAnimation = new LazyLoad({
+  elements_selector: ".image-lazy__animation",
+  class_loaded: "image-lazy--loaded",
+  load_delay: 600,
+});
+let lazyLoad = new LazyLoad({
+  elements_selector: ".image-lazy",
+  class_loaded: "image-lazy--loaded",
+  load_delay: 100,
+});
 
 createApp(App)
   .use(store)
@@ -23,6 +36,14 @@ createApp(App)
   .mixin({
     created: function () {
       this.gsap = gsap;
+      this.lazyLoadAnimation = lazyLoadAnimation;
+      this.lazyLoad = lazyLoad;
+    },
+    mounted: function () {
+      this.$nextTick(() => {
+        this.lazyLoadAnimation.update();
+        this.lazyLoad.update();
+      });
     },
   })
   .mount("#app");

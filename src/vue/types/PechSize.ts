@@ -14,7 +14,8 @@ interface IPech {
   weight: string; //вес
   density: string; //толщина стали
   paint: string; //краска
-  firewood: string;
+  firewood: string; //длина дров
+  ozon: string; //ссылка
 }
 
 type PechSize = {
@@ -23,7 +24,7 @@ type PechSize = {
 
 export let characteristicSize: PechSize = {
   [PechType.Mini]: {
-    img: { src: "vita-mini", alt: "буржуйка VITA мини" },
+    img: { src: "vita-mini-size", alt: "буржуйка VITA мини" },
     profile: {
       collect: "54х38х38",
       appart: "42х40х40",
@@ -32,11 +33,12 @@ export let characteristicSize: PechSize = {
     square: "50&nbsp;м³",
     weight: "17,4&nbsp;кг",
     density: "3&nbsp;мм",
-    paint: "Матовая краска CERTA 900",
+    paint: "Матовая краска: CERTA 900",
     firewood: "300&nbsp;мм",
+    ozon: "https://www.ozon.ru/product/otopitelnaya-pech-burzhuyka-vita-mini-kruglaya-50-m3-drovyanaya-pech-dlya-doma-dachi-garazha-palatok-867493805/?utm_source=landing&utm_campaign=vendor_org_135307&hs=1&sh=FB6s_120Zw",
   },
   [PechType.Standart]: {
-    img: { src: "vita-standart", alt: "буржуйка VITA стандарт" },
+    img: { src: "vita-standart-size", alt: "буржуйка VITA стандарт" },
     profile: {
       collect: "61х45х48",
       appart: "50х44х46",
@@ -45,7 +47,8 @@ export let characteristicSize: PechSize = {
     square: "75&nbsp;м³",
     weight: "23,6&nbsp;кг",
     density: "3&nbsp;мм",
-    paint: "Матовая краска CERTA 900",
+    paint: "Матовая краска: CERTA 900",
     firewood: "400&nbsp;мм",
+    ozon: "https://www.ozon.ru/product/otopitelnaya-pech-burzhuyka-vita-standart-100-m3-drovyanaya-pech-dlya-doma-dachi-garazha-palatok-872655591/?utm_source=landing&utm_campaign=vendor_org_135307&hs=1&sh=FB6s_wvPGg",
   },
 };

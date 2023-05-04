@@ -26,7 +26,7 @@
         </div>
       </div>
       <a class="button" data-fancybox href="#modal-order">
-        <span class="button-background"></span>
+        <span class="button-background button-animation"></span>
         <span class="button-text">Заказать</span>
       </a>
     </CharacteristicItem>
@@ -34,27 +34,29 @@
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "./CharacteristicItem.vue";
+import CharacteristicItem from "../helpers/VitaBlock.vue";
+import IVitaContent from "../types/IVitaContent";
 import { defineComponent } from "vue";
-import { complectation } from "../types/Characteristic";
-import buttonAnimated from "../mixins/buttonAnimated";
+
+let complectation: IVitaContent = {
+  title: "Комплектация печи",
+  img: {
+    src: "char-complect",
+    alt: "Комплектация печи буржуйка",
+  },
+  anycontent: true,
+};
 
 export default defineComponent({
   components: {
     CharacteristicItem,
   },
-  mounted() {
-    //mixin
-    // this.btnAnim(".characteristic-complectation", "a.button");
-  },
-  mixins: [buttonAnimated],
-
   data() {
     return {
       complectation: complectation,
       text1: [
         {
-          content: "Печь - буржуйка «VITA»",
+          content: "Печь-буржуйка «VITA»",
           list: ["Съёмные ножки", "Зольник/совок"],
         },
         { content: "Внутренний<br> шестигранный&nbsp;ключ" },
@@ -97,7 +99,7 @@ export default defineComponent({
 }
 </style>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../scss/_global.scss";
 
 .characteristic-complectation {
@@ -112,9 +114,21 @@ export default defineComponent({
   .characteristic-wraper {
     @media (max-width: 576px) {
       gap: 20px;
+    }
 
-      &__media {
+    &__media {
+      @media (max-width: 576px) {
         height: auto;
+      }
+
+      img {
+        @media (max-width: 992px) {
+          aspect-ratio: 520 /369;
+        }
+
+        @media (max-width: 425px) {
+          aspect-ratio: 268/315;
+        }
       }
     }
   }

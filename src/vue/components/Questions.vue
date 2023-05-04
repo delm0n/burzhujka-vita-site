@@ -6,21 +6,18 @@
           <h2>Остались вопросы?</h2>
           <p class="phone">8 800 250 59 32</p>
           <p class="subtitle">
-            Звоните прямо сейчас, и мы ответим или оставьте свои данные, и мы
-            свяжемся с Вами в ближайшее время
+            Позвоните нам прямо сейчас или оставьте свои контактные данные,
+            чтобы мы могли связаться с вами в ближайшее время.
           </p>
 
           <QuestionsForm />
         </div>
 
         <div class="questions-wrapper__img">
-          <img
+          <ImageLazy
             :alt="'заказать звонок'"
-            :src="
-              'build/images/' +
-              'questions-img' +
-              (getWebp == 'webp' ? '.webp' : '.png')
-            "
+            :src="'questions-img'"
+            :animation="false"
           />
         </div>
       </div>
@@ -31,7 +28,6 @@
 <script>
 import QuestionsForm from "../components/QuestionsForm.vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
-import { mapGetters } from "vuex";
 
 export default {
   data() {
@@ -41,7 +37,6 @@ export default {
     QuestionsForm,
     ImageLazy,
   },
-  computed: mapGetters(["getWebp"]),
 };
 </script>
 

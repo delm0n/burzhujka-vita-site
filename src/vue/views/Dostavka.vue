@@ -17,11 +17,11 @@
           </div>
         </div>
       </section>
-      <DostavkaBlock />
+      <dostavka-block />
     </main>
-    <Delivery />
-    <FAQ />
-    <Questions />
+    <delivery />
+    <vita-faq />
+    <questions />
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
     Questions: defineAsyncComponent(() =>
       import("../components/Questions.vue")
     ),
-    FAQ: defineAsyncComponent(() => import("../components/FAQ.vue")),
+    VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },
 };
 </script>

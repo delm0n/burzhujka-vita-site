@@ -32,7 +32,7 @@ export let heatings: Array<IHeating> = [
       },
       {
         icon: Colors.Red,
-        text: "Часто ломаются, трудно починить самостоятельно.",
+        text: "Часто ломается, трудно починить самостоятельно.",
       },
       {
         icon: Colors.Red,
@@ -61,7 +61,7 @@ export let heatings: Array<IHeating> = [
       },
       {
         icon: Colors.Red,
-        text: "Часто ломаются, трудно починить самостоятельно.",
+        text: "Часто ломается, трудно починить самостоятельно.",
       },
       {
         icon: Colors.Green,

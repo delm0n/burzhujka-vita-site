@@ -47,7 +47,7 @@
                 data-fancybox
                 href="#modal-order"
               >
-                <span class="button-background"></span>
+                <span class="button-background button-animation"></span>
                 <span class="button-text">Купить в рассрочку</span>
               </a>
             </div>
@@ -55,6 +55,7 @@
           <div class="tinkoff-wrapper__img">
             <div class="line"></div>
             <ImageLazy
+              :animation="false"
               :alt="'Печь буржуйка в рассрочку'"
               :src="img"
               :srcMedia="992"
@@ -393,6 +394,18 @@ export default {
           .button-background {
             background-color: #ffdd2d;
             border-radius: 8px;
+
+            &.button-animation::before {
+              opacity: 0.9;
+              background: linear-gradient(
+                100deg,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0) 40%,
+                hsla(0, 0%, 90%, 0.4) 77%,
+                rgba(0, 0, 0, 0) 89%,
+                rgba(0, 0, 0, 0)
+              );
+            }
           }
           .button-text {
             color: $gray;
@@ -436,6 +449,10 @@ export default {
       img {
         width: 100%;
         display: block;
+
+        @media (max-width: 992px) {
+          aspect-ratio: 97/87;
+        }
 
         @media (max-width: 576px) {
           width: calc(100% + 14px * 2);

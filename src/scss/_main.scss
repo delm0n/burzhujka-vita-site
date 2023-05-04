@@ -7,6 +7,10 @@
   list-style-type: none;
 }
 
+picture {
+  display: flex;
+}
+
 .will-change--active {
   will-change: auto;
 }
@@ -135,10 +139,15 @@ div.title {
   }
 }
 
-.image-lazy {
+.image-lazy__animation {
   opacity: 0;
   transform: scale(0.9);
   transition: all 0.8s;
+}
+
+.image-lazy {
+  opacity: 0;
+  transition: all 0.1s;
 
   &--loaded {
     opacity: 1;
@@ -205,9 +214,9 @@ div.title {
   max-width: 100%;
   cursor: pointer;
 
-  @media (max-width: 575px) {
-    order: 1;
-  }
+  // @media (max-width: 575px) {
+  //   order: 1;
+  // }
 
   input {
     position: absolute;
