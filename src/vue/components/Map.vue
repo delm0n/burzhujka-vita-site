@@ -17,18 +17,18 @@
       </div>
     </div>
     <div class="content-container_map">
-      <div v-if="pageLoad" class="page-loader-wrap"></div>
       <div id="shop-map" class="map-item"></div>
     </div>
   </section>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Map",
   data() {
     return {
-      pageLoad: true,
       list1: [
         "Сдать товар по гарантии, оформить возврат или обмен без бюрократии",
         "Оформить заявку на самовывоз и забрать товар, который купили в нашем интернет-магазине",
@@ -41,74 +41,77 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-      // получение списка адресов магазинов
-      const requestURL = "https://apispn.ru/json/shops/";
-      const request = new XMLHttpRequest();
-      request.open("GET", requestURL);
-      request.responseType = "json";
-      request.send();
+    this.gsap.timeline({
+      delay: 4,
+      scrollTrigger: {
+        once: true,
+        trigger: "#map",
+        start: "-60% bottom",
+        onEnter: this.getShops,
+        onEnterBack: this.getShops,
+      },
+    });
+  },
 
-      request.onload = function () {
-        const citiesJSON = JSON.parse(request.response);
+  methods: {
+    async getShops() {
+      await axios
+        .get("https://apispn.ru/json/shops/")
+        .then(function (response) {
+          // handle success
+          let citiesJSON = JSON.parse(response.data);
 
-        // создание карты с метками
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
-        document.querySelector("body").appendChild(script);
+          // создание карты с метками
+          let script = document.createElement("script");
+          script.setAttribute("async", "");
+          script.type = "text/javascript";
+          script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+          document.querySelector("body").appendChild(script);
 
-        script.onload = function () {
-          ymaps.ready(function () {
-            const myMap = new ymaps.Map("shop-map", {
-              center: [55.75222, 37.61556],
-              zoom: 11,
-              controls: ["zoomControl"],
+          script.onload = function () {
+            ymaps.ready(function () {
+              let myMap = new ymaps.Map("shop-map", {
+                center: [55.75222, 37.61556],
+                zoom: 10,
+                controls: ["zoomControl"],
+              });
+
+              citiesJSON.forEach(function (inx) {
+                let city = inx.city;
+                inx.shops.forEach(function (shop) {
+                  let mark = new ymaps.Placemark(
+                    shop.coords,
+                    {
+                      hasHint: true,
+                      hintContent:
+                        "Градус Хаус в г. " + city + ", " + shop.name,
+                    },
+                    {
+                      iconLayout: "default#image",
+                      iconImageHref: "build/images/placemark.svg",
+                      iconImageSize: [56, 42],
+                      iconImageOffset: [-33, -38],
+                    }
+                  );
+
+                  mark.events.add("click", function (e) {
+                    myMap.hint.open(
+                      shop.coords,
+                      " Градус Хаус в г. " + city + ", " + shop.name
+                    );
+                  });
+
+                  myMap.geoObjects.add(mark);
+                });
+              });
             });
-
-            myMap.behaviors.disable("scrollZoom");
-
-            // создание меток на общей карте
-            Object.keys(citiesJSON).forEach(function (inx) {
-              let city = this[inx]["city"];
-              this[inx]["shops"].forEach(function (shop) {
-                let mark = new ymaps.Placemark(
-                  shop["coords"],
-                  {
-                    hintContent:
-                      "Градус Хаус в г. " + city + ", " + shop["name"],
-                  },
-                  {
-                    iconLayout: "default#image",
-                    iconImageHref: "build/images/placemark.svg",
-                    iconImageSize: [56, 42],
-                    iconImageOffset: [-33, -38],
-                  }
-                );
-                mark.events.add("click", function (e) {
-                  city_input.value = city;
-                  cities_list.innerHTML = "";
-                  city_btn.click();
-                });
-                myMap.geoObjects.add(mark);
-              });
-            }, citiesJSON);
-
-            // устанавливает событие клика на доступные города
-            const setEvent = function () {
-              cities_list.childNodes.forEach(function (e) {
-                e.addEventListener("click", function (inx) {
-                  city_input.value = e.innerText;
-                  cities_list.innerHTML = "";
-                  city_btn.click();
-                });
-              });
-            };
-          });
-        };
-      };
-      this.pageLoad = false;
-    }, 100);
+          };
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
   },
 };
 </script>

@@ -102,12 +102,13 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 @import "../../scss/_global.scss";
 
 footer {
   background: #2a2a2a;
-  padding: 120px 0 170px;
+  padding: 88px 0 106px;
 
   @media (max-width: 922px) {
     padding: 60px 0 90px;
@@ -124,7 +125,7 @@ footer {
   .footer-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 30px;
+    row-gap: 20px;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -150,7 +151,7 @@ footer {
 
     &__phone {
       grid-column: 2/3;
-      grid-row: 1/3;
+      grid-row: 1/2;
 
       @media (max-width: 768px) {
         grid-column: 1/2;
@@ -161,13 +162,13 @@ footer {
         font-family: "Roboto";
         font-style: normal;
         font-weight: 700;
-        font-size: 70px;
+        font-size: 45px;
         line-height: 135%;
         color: #ffffff;
         text-align: right;
         white-space: nowrap;
 
-        @include fluidFontSize(50, 70, 769, 1920);
+        @include fluidFontSize(22, 45, 769, 1920);
 
         @media (max-width: 768px) {
           font-weight: 500;
@@ -194,7 +195,7 @@ footer {
       }
     }
     &__decr {
-      grid-row: 2/4;
+      grid-row: 2/3;
       grid-column: 1/2;
 
       @media (max-width: 768px) {
@@ -205,7 +206,7 @@ footer {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      justify-content: center;
+      justify-content: end;
 
       @media (max-width: 768px) {
         gap: 24px;
@@ -231,18 +232,18 @@ footer {
       }
     }
     &__links {
-      grid-row: 3/5;
+      grid-row: 2/4;
       grid-column: 2/3;
 
       display: flex;
-      gap: 6px;
+      gap: 0;
       flex-direction: column;
       justify-content: end;
 
       @media (max-width: 768px) {
         grid-column: 1/2;
         grid-row: 4/5;
-        gap: 3px;
+        // gap: 3px;
       }
 
       a:not(.button) {
@@ -250,12 +251,12 @@ footer {
         font-family: "Roboto";
         font-style: normal;
         font-weight: 400;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 160%;
         margin-left: auto;
         @include linkHover(white);
 
-        @include fluidFontSize(16, 22, 769, 1920);
+        @include fluidFontSize(16, 20, 769, 1920);
 
         @media (max-width: 768px) {
           font-size: 16px;
@@ -282,8 +283,9 @@ footer {
       }
     }
     &__copyright {
-      grid-row: 4/5;
+      grid-row: 3/4;
       grid-column: 1/2;
+      align-self: end;
 
       @media (max-width: 768px) {
         grid-column: 1/2;
@@ -297,6 +299,7 @@ footer {
         font-size: 12px;
         line-height: 140%;
         color: #ffffff;
+        max-width: 563px;
 
         @media (max-width: 768px) {
           font-weight: 400;

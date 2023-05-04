@@ -1,13 +1,13 @@
 <template>
-  <HeaderTop :path="$route.name" />
+  <header-top :path="$route.name" />
   <router-view v-slot="{ Component }">
     <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>
-  <Map />
-  <Footer :path="$route.name" />
-  <ButtonUp />
+  <map />
+  <vita-footer :path="$route.name" />
+  <button-up />
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
   components: {
     HeaderTop,
     ButtonUp: defineAsyncComponent(() => import("./components/ButtonUp.vue")),
-    Footer: defineAsyncComponent(() => import("./components/Footer.vue")),
+    VitaFooter: defineAsyncComponent(() => import("./components/Footer.vue")),
     ModalSuccess: defineAsyncComponent(() =>
       import("./components/ModalSuccess.vue")
     ),

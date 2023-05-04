@@ -28,28 +28,28 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
-import Header from "../components/Header.vue";
+import VitaHeader from "../components/Header.vue";
 import CharacteristicSize from "../components/CharacteristicSize.vue";
 import Characteristic from "../components/Characteristic.vue";
 import CharacteristicRound from "../components/CharacteristicRound.vue";
 import Made from "../components/Made.vue";
 import Complectation from "../components/Complectation.vue";
+import Heating from "../components/Heating.vue";
+import TinkoffBlock from "../components/TinkoffBlock.vue";
 
 export default {
   components: {
-    Header,
+    VitaHeader,
     CharacteristicSize,
     Characteristic,
-    Heating: defineAsyncComponent(() => import("../components/Heating.vue")),
+    Heating,
     CharacteristicRound,
     Peculiar: defineAsyncComponent(() => import("../components/Peculiar.vue")),
     Complectation,
     VitaArea: defineAsyncComponent(() => import("../components/Area.vue")),
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
-    TinkoffBlock: defineAsyncComponent(() =>
-      import("../components/TinkoffBlock.vue")
-    ),
+    TinkoffBlock,
     Together: defineAsyncComponent(() => import("../components/Together.vue")),
     Made,
     Feedback: defineAsyncComponent(() => import("../components/Feedback.vue")),
