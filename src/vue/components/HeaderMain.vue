@@ -110,7 +110,6 @@
 </template>
 
 <script lang="ts">
-import HeaderTop from "./HeaderTop.vue";
 import IconPlus from "../helpers/IconPlus.vue";
 import Colors from "../types/ColorsEnum";
 import { defineComponent } from "vue";
@@ -142,7 +141,6 @@ export default defineComponent({
   },
   components: {
     IconPlus,
-    HeaderTop,
   },
   mounted() {
     window.addEventListener("DOMContentLoaded", () => {

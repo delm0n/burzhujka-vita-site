@@ -5,7 +5,7 @@
       <component :is="Component" />
     </transition>
   </router-view>
-  <map />
+  <vita-map />
   <vita-footer :path="$route.name" />
   <button-up />
 </template>
@@ -23,7 +23,7 @@ export default {
     ModalSuccess: defineAsyncComponent(() =>
       import("./components/ModalSuccess.vue")
     ),
-    Map: defineAsyncComponent(() => import("./components/Map.vue")),
+    VitaMap: defineAsyncComponent(() => import("./components/Map.vue")),
   },
 };
 </script>

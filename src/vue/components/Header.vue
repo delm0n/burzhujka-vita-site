@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import { mapGetters } from "vuex";
-import HeaderTop from "./HeaderTop.vue";
 import HeaderMain from "./HeaderMain.vue";
 import { defineComponent } from "vue";
 
@@ -45,11 +44,41 @@ export default defineComponent({
   @media (max-width: 992px) {
     background: url($url-mobile) no-repeat;
     background-position: center 0;
-    background-size: 1366px;
+    background-size: 992px;
   }
 
-  @media (max-width: 768px) {
-    background-size: 926px;
+  @media (max-width: 576px) {
+    background-size: 850px;
+  }
+}
+
+@mixin pech-bg($url, $url-mobile) {
+  background: url($url) no-repeat;
+  background-size: 700px;
+  background-position: top 0 right 16.7%;
+
+  @media (max-width: 1920px) {
+    background-size: contain;
+    background-position: top 0 right 173px;
+  }
+
+  @media (max-width: 1537px) {
+    background-position: top 0 right 145px;
+  }
+
+  @media (max-width: 1366px) {
+    background-position: top 0 right 22px;
+  }
+
+  @media (max-width: 992px) {
+    background-size: 375px;
+    background-position: top 0 right calc(50% + 5px);
+  }
+
+  @media (max-width: 576px) {
+    background: url($url-mobile) no-repeat;
+    background-position: top 0 right 50%;
+    background-size: 295px;
   }
 }
 
@@ -61,14 +90,46 @@ header {
 
   @media (max-width: 992px) {
     margin-bottom: 30px;
+
+    .container {
+      max-width: 560px;
+    }
   }
 
   &.webp {
-    @include main-bg("../images/main-bg.webp", "../images/main-bg-mobile.webp");
+    @include main-bg(
+      "../images/main-bg-2.webp",
+      "../images/main-bg-mobile-2.webp"
+    );
   }
 
   &.nowebp {
-    @include main-bg("../images/main-bg.png", "../images/main-bg-mobile.png");
+    @include main-bg(
+      "../images/main-bg-2.png",
+      "../images/main-bg-mobile-2.png"
+    );
+  }
+
+  .pech-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &.webp {
+      @include pech-bg(
+        "../images/pech-bg-2.webp",
+        "../images/pech-bg-mobile-2.png"
+      );
+    }
+
+    &.nowebp {
+      @include pech-bg(
+        "../images/pech-bg-2.png",
+        "../images/pech-bg-mobile-2.png"
+      );
+    }
   }
 }
 

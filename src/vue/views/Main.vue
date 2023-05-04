@@ -36,6 +36,7 @@ import Made from "../components/Made.vue";
 import Complectation from "../components/Complectation.vue";
 import Heating from "../components/Heating.vue";
 import TinkoffBlock from "../components/TinkoffBlock.vue";
+import Questions from "../components/Questions.vue";
 
 export default {
   components: {
@@ -66,9 +67,7 @@ export default {
     ModalSuccess: defineAsyncComponent(() =>
       import("../components/ModalSuccess.vue")
     ),
-    Questions: defineAsyncComponent(() =>
-      import("../components/Questions.vue")
-    ),
+    Questions,
   },
 };
 </script>
