@@ -50,7 +50,6 @@ export default {
     VitaArea: defineAsyncComponent(() => import("../components/Area.vue")),
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
-    TinkoffBlock,
     Together: defineAsyncComponent(() => import("../components/Together.vue")),
     Made,
     Feedback: defineAsyncComponent(() => import("../components/Feedback.vue")),

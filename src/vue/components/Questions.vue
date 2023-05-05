@@ -17,7 +17,7 @@
           <ImageLazy
             :alt="'заказать звонок'"
             :src="'questions-img'"
-            :animation="false"
+            :animation="true"
           />
         </div>
       </div>
