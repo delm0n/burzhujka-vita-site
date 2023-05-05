@@ -1,6 +1,6 @@
 <template>
   <section class="characteristic-complectation">
-    <CharacteristicItem :char="complectation">
+    <vita-block :char="complectation">
       <div class="complectation-wrapper">
         <div class="complectation-wrapper__item">
           <div v-for="(item, index) in text1" :key="index">
@@ -29,12 +29,12 @@
         <span class="button-background button-animation"></span>
         <span class="button-text">Заказать</span>
       </a>
-    </CharacteristicItem>
+    </vita-block>
   </section>
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "../helpers/VitaBlock.vue";
+import VitaBlock from "../helpers/VitaBlock.vue";
 import IVitaContent from "../types/IVitaContent";
 import { defineComponent } from "vue";
 
@@ -49,7 +49,7 @@ let complectation: IVitaContent = {
 
 export default defineComponent({
   components: {
-    CharacteristicItem,
+    VitaBlock,
   },
   data() {
     return {

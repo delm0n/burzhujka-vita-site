@@ -29,10 +29,11 @@
                 </svg>
               </div>
 
-              <ImageLazy
+              <image-lazy
                 @click="dopClick(dop)"
                 :src="dop.img.src"
                 :alt="dop.img.alt"
+                :animation="false"
               />
 
               <div class="dops-item__content">
@@ -72,7 +73,7 @@
           </div>
         </div>
 
-        <TogetherForm class="together-wrapper__order" />
+        <together-form class="together-wrapper__order" />
       </div>
     </div>
 

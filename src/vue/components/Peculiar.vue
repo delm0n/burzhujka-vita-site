@@ -22,7 +22,7 @@
                   ' img--container',
                 ]"
               >
-                <ImageLazy
+                <image-lazy
                   :animation="false"
                   :src="peculiar.img.src"
                   :alt="peculiar.img.alt"
@@ -40,7 +40,7 @@
             </div>
           </article>
         </div>
-        <SwiperNavigation
+        <swiper-navigation
           navClass="peculiar-navigation"
           prevClass="peculiar-btn__prev"
           nextClass="peculiar-btn__next"

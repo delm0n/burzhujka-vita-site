@@ -16,7 +16,6 @@
       <made />
       <feedback />
       <photo />
-      <questions />
     </main>
 
     <modal-call />
@@ -35,6 +34,8 @@ import CharacteristicRound from "../components/CharacteristicRound.vue";
 import Made from "../components/Made.vue";
 import Complectation from "../components/Complectation.vue";
 import Heating from "../components/Heating.vue";
+import Together from "../components/Together.vue";
+import Feedback from "../components/Feedback.vue";
 
 export default {
   components: {
@@ -44,13 +45,15 @@ export default {
     Heating,
     CharacteristicRound,
     Peculiar: defineAsyncComponent(() => import("../components/Peculiar.vue")),
-    Complectation,
+    Complectation: defineAsyncComponent(() =>
+      import("../components/Complectation.vue")
+    ),
     VitaArea: defineAsyncComponent(() => import("../components/Area.vue")),
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
-    Together: defineAsyncComponent(() => import("../components/Together.vue")),
-    Made: defineAsyncComponent(() => import("../components/Made.vue")),
-    Feedback: defineAsyncComponent(() => import("../components/Feedback.vue")),
+    Together,
+    Made,
+    Feedback,
     Photo: defineAsyncComponent(() => import("../components/Photo.vue")),
     ModalCall: defineAsyncComponent(() =>
       import("../components/ModalCall.vue")
@@ -64,20 +67,6 @@ export default {
     ModalSuccess: defineAsyncComponent(() =>
       import("../components/ModalSuccess.vue")
     ),
-    Questions: defineAsyncComponent(() =>
-      import("../components/Questions.vue")
-    ),
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../../scss/_fonts.scss";
-
-@include robotoFont("../..");
-@include phuduFont("../..");
-@include plexFont("../..");
-#map {
-  padding-bottom: 0 !important;
-}
-</style>

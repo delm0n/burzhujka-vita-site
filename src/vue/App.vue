@@ -5,6 +5,7 @@
       <component :is="Component" />
     </transition>
   </router-view>
+  <questions />
   <vita-map />
   <vita-footer :path="$route.name" />
   <button-up />
@@ -23,6 +24,7 @@ export default {
     ModalSuccess: defineAsyncComponent(() =>
       import("./components/ModalSuccess.vue")
     ),
+    Questions: defineAsyncComponent(() => import("./components/Questions.vue")),
     VitaMap: defineAsyncComponent(() => import("./components/Map.vue")),
   },
 };
@@ -30,6 +32,11 @@ export default {
 
 <style lang="scss">
 @import "../scss/_main.scss";
+@import "../scss/_fonts.scss";
+
+@include robotoFont("..");
+@include phuduFont("..");
+@include plexFont("..");
 
 .fade-enter-active,
 .fade-leave-active {

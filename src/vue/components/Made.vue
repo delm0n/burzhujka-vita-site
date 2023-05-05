@@ -1,6 +1,6 @@
 <template>
   <section id="made">
-    <CharacteristicItem :char="made">
+    <vita-block :char="made">
       <div class="made-items">
         <div class="swiper-wrapper">
           <div
@@ -8,10 +8,10 @@
             :key="index"
             class="swiper-slide"
           >
-            <ImageLazy :src="item.src" :alt="item.alt" :srcMedia="425" />
+            <image-lazy :src="item.src" :alt="item.alt" :srcMedia="425" />
           </div>
         </div>
-        <SwiperNavigation
+        <swiper-navigation
           navClass="made-navigation"
           prevClass="made-btn__prev"
           nextClass="made-btn__next"
@@ -22,13 +22,13 @@
           >Сайт завода изготовителя печек-буржуек</a
         >
       </div>
-    </CharacteristicItem>
+    </vita-block>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import CharacteristicItem from "../helpers/VitaBlock.vue";
+import VitaBlock from "../helpers/VitaBlock.vue";
 import { Swiper, Navigation } from "swiper";
 import SwiperNavigation from "../helpers/SwiperNavigation.vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
@@ -73,7 +73,7 @@ export default defineComponent({
     };
   },
   components: {
-    CharacteristicItem,
+    VitaBlock,
     ImageLazy,
     SwiperNavigation,
   },

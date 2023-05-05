@@ -33,7 +33,6 @@
       </button>
 
       <p class="decr">Мы свяжемся с Вами в течение 10 минут</p>
-      <FormHelicon />
     </form>
   </div>
 </template>
@@ -104,12 +103,8 @@
 
 <script>
 import { mapMutations } from "vuex";
-import FormHelicon from "../helpers/FormHelicon.vue";
 
 export default {
   methods: mapMutations(["openModalSuccessManager"]),
-  components: {
-    FormHelicon,
-  },
 };
 </script>

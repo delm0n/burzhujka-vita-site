@@ -1,6 +1,6 @@
 <template>
   <header v-bind:class="getWebp">
-    <HeaderMain @updateParent="onUpdateContent" />
+    <header-main @updateParent="onUpdateContent" />
 
     <div v-if="modalContent" id="component-modal" style="display: none">
       <div v-html="modalContent"></div>

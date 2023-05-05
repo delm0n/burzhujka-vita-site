@@ -2,7 +2,7 @@
   <section id="characteristic">
     <div class="characteristic-items">
       <div class="swiper-wrapper">
-        <CharacteristicItem
+        <vita-block
           class="swiper-slide"
           v-for="(char, index) in characteristics"
           :key="index"
@@ -11,7 +11,7 @@
         />
       </div>
 
-      <SwiperNavigation
+      <swiper-navigation
         navClass="characteristic-navigation"
         prevClass="characteristic-btn__prev"
         nextClass="characteristic-btn__next"
@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "../helpers/VitaBlock.vue";
+import VitaBlock from "../helpers/VitaBlock.vue";
 import { defineComponent } from "vue";
 import { characteristics } from "../types/Characteristic";
 import SwiperSettings from "../mixins/SwiperSettings.js";
@@ -29,7 +29,7 @@ import SwiperNavigation from "../helpers/SwiperNavigation.vue";
 
 export default defineComponent({
   components: {
-    CharacteristicItem,
+    VitaBlock,
     SwiperNavigation,
   },
 

@@ -16,7 +16,7 @@
         >
           <div class="accordion-menu">
             <h3 v-text="acc.title"></h3>
-            <IconPlus :color="acc.color" />
+            <icon-plus :color="acc.color" />
           </div>
           <div class="accordion-content">
             <div class="accordion-content__wrap">

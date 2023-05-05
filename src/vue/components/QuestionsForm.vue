@@ -27,18 +27,13 @@
     </button>
 
     <p class="decr">Менеджеры свяжутся с вами для уточнения деталей заказа</p>
-    <FormHelicon />
   </form>
 </template>
 
 <script>
-import FormHelicon from "../helpers/FormHelicon.vue";
 import { mapMutations } from "vuex";
 
 export default {
-  components: {
-    FormHelicon,
-  },
   methods: mapMutations(["openModalSuccessManager"]),
 };
 </script>

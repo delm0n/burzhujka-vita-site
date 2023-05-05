@@ -10,10 +10,11 @@
             <div v-for="(feed, i) in feedbacks" :key="i" class="swiper-slide">
               <div class="feedback-item">
                 <div class="feedback-item__img">
-                  <ImageLazy
+                  <image-lazy
                     :alt="'Отзыв клиента на круглую буржуйку VITA'"
                     :src="feed.img"
                     :srcMedia="992"
+                    :animation="false"
                   />
                 </div>
                 <div class="feedback-item__line">
@@ -27,7 +28,7 @@
             </div>
           </div>
 
-          <SwiperNavigation
+          <swiper-navigation
             navClass="feedback-navigation"
             prevClass="feedback-btn__prev"
             nextClass="feedback-btn__next"

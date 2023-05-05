@@ -4,7 +4,7 @@
 
     <div class="line"></div>
 
-    <PechModelCheckbox
+    <pech-model-checkbox
       class="order-model"
       :icon="true"
       :spanValue="'Буржуйка-'"
@@ -50,23 +50,17 @@
         <span class="button-text">Заказать</span>
       </button>
     </div>
-
-    <FormHelicon :main="true" />
   </form>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import FormHelicon from "../helpers/FormHelicon.vue";
 import PechModelCheckbox from "../helpers/PechModelCheckbox.vue";
-import RassrochkaCheckbox from "../helpers/RassrochkaCheckbox.vue";
 
 export default {
   methods: mapMutations(["openModalSuccessManager"]),
   components: {
-    FormHelicon,
     PechModelCheckbox,
-    RassrochkaCheckbox,
   },
   computed: {
     ...mapGetters(["getPrice"]),
@@ -89,7 +83,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 @import "../../scss/_global.scss";
 
 form.together-form {

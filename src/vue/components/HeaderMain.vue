@@ -67,7 +67,7 @@
             @click="tippyModal(item.content)"
             ref="icons"
           >
-            <IconPlus :color="Colors.White" />
+            <icon-plus :color="Colors.White" />
           </div>
         </div>
 

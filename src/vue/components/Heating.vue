@@ -8,7 +8,7 @@
 
       <div class="heating-items">
         <div class="swiper-wrapper">
-          <HeatingItem
+          <heating-item
             v-for="(heat, index) in heatings"
             :key="index"
             :heat="heat"
@@ -16,7 +16,7 @@
           />
         </div>
 
-        <SwiperNavigation
+        <swiper-navigation
           navClass="heating-navigation"
           prevClass="heating-btn__prev"
           nextClass="heating-btn__next"

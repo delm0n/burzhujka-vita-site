@@ -35,7 +35,7 @@
       <div class="user-check">
         <div>
           <p class="user-check__title title-size">Выберите размер:</p>
-          <PechModelCheckbox />
+          <pech-model-checkbox />
         </div>
 
         <div>
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <RassrochkaCheckbox class="title-rassr" />
+        <rassrochka-checkbox class="title-rassr" />
       </div>
 
       <button @click="openModalSuccessManager()" type="submit" class="button">
@@ -81,8 +81,6 @@
         Менеджеры свяжутся с вами в ближайшее время, <br />
         для уточнения деталей заказа
       </p>
-
-      <FormHelicon :rassr="true" :main="true" />
     </form>
   </div>
 </template>
@@ -90,7 +88,6 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 
-import FormHelicon from "../helpers/FormHelicon.vue";
 import PechModelCheckbox from "../helpers/PechModelCheckbox.vue";
 import RassrochkaCheckbox from "../helpers/RassrochkaCheckbox.vue";
 
@@ -135,7 +132,6 @@ export default {
     },
   },
   components: {
-    FormHelicon,
     PechModelCheckbox,
     RassrochkaCheckbox,
   },

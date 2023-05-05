@@ -37,8 +37,6 @@
         size > 425 ? "Заказать звонок" : "Заказать"
       }}</span>
     </button>
-
-    <FormHelicon :main="true" />
   </form>
 </template>
 
@@ -89,7 +87,6 @@
 </style>
 
 <script>
-import FormHelicon from "../helpers/FormHelicon.vue";
 import { mapMutations } from "vuex";
 
 export default {
@@ -99,8 +96,5 @@ export default {
     };
   },
   methods: mapMutations(["openModalSuccessManager"]),
-  components: {
-    FormHelicon,
-  },
 };
 </script>

@@ -10,7 +10,7 @@
         <article v-for="(item, index) in items" :key="index">
           <div class="aria-item">
             <div class="aria-item__img">
-              <ImageLazy
+              <image-lazy
                 :src="item.img.src"
                 :alt="item.img.alt"
                 :srcMedia="992"

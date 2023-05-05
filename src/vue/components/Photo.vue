@@ -14,7 +14,7 @@
           :class="'photo-container' + ' photo-container-' + (index + 1)"
           :key="index"
         >
-          <ImageLazy
+          <image-lazy
             :src="photo.src"
             :alt="'Буржуйка VITA фотография ' + (index + 1)"
             :srcMedia="425"
@@ -62,7 +62,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 @import "../../scss/_global.scss";
 
 #photo {

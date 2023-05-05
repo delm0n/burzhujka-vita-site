@@ -11,7 +11,7 @@
 
       <div class="delivery-wrapper">
         <div class="delivery-wrapper__form">
-          <DeliveryForm />
+          <delivery-form />
         </div>
 
         <div class="delivery-wrapper__features">

@@ -3,7 +3,7 @@
     <div class="heating-item-container">
       <div class="heating-wrap">
         <div class="heating-wrap__image">
-          <ImageLazy
+          <image-lazy
             :animation="false"
             :src="heat.img.src"
             :alt="heat.img.alt"
@@ -18,7 +18,7 @@
             :key="index"
             class="features-item"
           >
-            <IconPlus :color="item.icon" />
+            <icon-plus :color="item.icon" />
             <p v-html="item.text"></p>
           </div>
         </div>

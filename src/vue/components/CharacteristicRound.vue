@@ -1,17 +1,17 @@
 <template>
   <section class="characteristic-round">
-    <CharacteristicItem :char="round" />
+    <vita-block :char="round" />
   </section>
 </template>
 
 <script lang="ts">
-import CharacteristicItem from "../helpers/VitaBlock.vue";
+import VitaBlock from "../helpers/VitaBlock.vue";
 import { defineComponent } from "vue";
 import { round } from "../types/Characteristic";
 
 export default defineComponent({
   components: {
-    CharacteristicItem,
+    VitaBlock,
   },
 
   data() {

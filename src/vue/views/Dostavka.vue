@@ -21,7 +21,6 @@
     </main>
     <delivery />
     <vita-faq />
-    <questions />
   </div>
 </template>
 
@@ -34,9 +33,6 @@ export default {
       import("../components/DostavkaBlock.vue")
     ),
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
-    Questions: defineAsyncComponent(() =>
-      import("../components/Questions.vue")
-    ),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },
 };

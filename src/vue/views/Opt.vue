@@ -3,7 +3,6 @@
     <opt-block />
     <made />
     <vita-faq />
-    <questions />
   </div>
 </template>
 
@@ -14,9 +13,6 @@ export default {
   components: {
     OptBlock: defineAsyncComponent(() => import("../components/OptBlock.vue")),
     Made: defineAsyncComponent(() => import("../components/Made.vue")),
-    Questions: defineAsyncComponent(() =>
-      import("../components/Questions.vue")
-    ),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },
 };
