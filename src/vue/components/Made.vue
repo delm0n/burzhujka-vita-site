@@ -29,7 +29,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import VitaBlock from "../helpers/VitaBlock.vue";
-import { Swiper, Navigation } from "swiper";
+import { Swiper, Autoplay, Navigation } from "swiper";
 import SwiperNavigation from "../helpers/SwiperNavigation.vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
 import IImage from "../types/IImage";
@@ -54,10 +54,6 @@ export default defineComponent({
       made: made,
       slider: [
         {
-          src: "made-1",
-          alt: "Закажите печь с завода",
-        },
-        {
           src: "made-2",
           alt: "Печь без брака",
         },
@@ -67,7 +63,7 @@ export default defineComponent({
         },
         {
           src: "made-4",
-          alt: "Печи дёшево",
+          alt: "Закажите печь с завода",
         },
       ] as Array<IImage>,
     };
@@ -85,12 +81,15 @@ export default defineComponent({
       slidesPerView: "auto",
       slidesPerGroup: 1,
       spaceBetween: 20,
-
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: ".made-btn__next",
         prevEl: ".made-btn__prev",
       },
-      modules: [Navigation],
+      modules: [Navigation, Autoplay],
     });
   },
 });

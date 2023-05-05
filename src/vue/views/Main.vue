@@ -70,3 +70,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../../scss/_fonts.scss";
+
+@include robotoFont("../..");
+@include phuduFont("../..");
+@include plexFont("../..");
+</style>

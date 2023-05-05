@@ -8,18 +8,6 @@
         <div class="header-top__wrap">
           <router-link class="header-top__logo" to="/">
             <picture>
-              <source
-                srcset="build/images/logo.webp"
-                width="60px"
-                media="(max-width: 576px)"
-                type="image/webp"
-              />
-              <source
-                srcset="build/images/logo.png"
-                width="60px"
-                media="(max-width: 576px)"
-                type="image/png"
-              />
               <source srcset="build/images/logo.webp" type="image/webp" />
               <img src="build/images/logo.png" alt="Логотип Helicon" />
             </picture>
@@ -243,6 +231,10 @@ export default {
   &__logo {
     @include flex-center-x(30px);
     cursor: pointer;
+
+    @media (max-width: 576px) {
+      max-width: 70px;
+    }
 
     p {
       font-family: "IBM Plex Sans";
