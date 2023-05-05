@@ -60,8 +60,5 @@
     ">0.3%"
   ],
   "author": "Zuev Artyom",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.4.0"
-  }
+  "license": "ISC"
 }

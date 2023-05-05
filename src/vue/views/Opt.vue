@@ -25,8 +25,4 @@ export default {
 <style lang="scss">
 @import "../../scss/_fonts.scss";
 @import "../../scss/_main.scss";
-
-@include robotoFont("../../..");
-@include phuduFont("../../..");
-@include plexFont("../../..");
 </style>

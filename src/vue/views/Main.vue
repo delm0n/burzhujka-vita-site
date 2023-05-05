@@ -35,8 +35,6 @@ import CharacteristicRound from "../components/CharacteristicRound.vue";
 import Made from "../components/Made.vue";
 import Complectation from "../components/Complectation.vue";
 import Heating from "../components/Heating.vue";
-import TinkoffBlock from "../components/TinkoffBlock.vue";
-import Questions from "../components/Questions.vue";
 
 export default {
   components: {
@@ -51,7 +49,7 @@ export default {
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
     Together: defineAsyncComponent(() => import("../components/Together.vue")),
-    Made,
+    Made: defineAsyncComponent(() => import("../components/Made.vue")),
     Feedback: defineAsyncComponent(() => import("../components/Feedback.vue")),
     Photo: defineAsyncComponent(() => import("../components/Photo.vue")),
     ModalCall: defineAsyncComponent(() =>
@@ -66,7 +64,9 @@ export default {
     ModalSuccess: defineAsyncComponent(() =>
       import("../components/ModalSuccess.vue")
     ),
-    Questions,
+    Questions: defineAsyncComponent(() =>
+      import("../components/Questions.vue")
+    ),
   },
 };
 </script>

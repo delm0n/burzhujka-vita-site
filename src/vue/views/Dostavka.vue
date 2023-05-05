@@ -47,10 +47,6 @@ export default {
 @import "../../scss/_main.scss";
 @import "../../scss/_global.scss";
 
-@include robotoFont("../../..");
-@include phuduFont("../../..");
-@include plexFont("../../..");
-
 .page-dostavka {
   form {
     max-width: 520px;

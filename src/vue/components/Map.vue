@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "Map",
   data() {
@@ -73,6 +71,8 @@ export default {
             zoom: 10,
             controls: ["zoomControl"],
           });
+
+          myMap.behaviors.disable("scrollZoom");
 
           citiesJSON.forEach(function (inx) {
             let city = inx.city;

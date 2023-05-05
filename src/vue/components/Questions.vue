@@ -10,15 +10,20 @@
             чтобы мы могли связаться с вами в ближайшее время.
           </p>
 
-          <QuestionsForm />
+          <questions-form />
         </div>
 
         <div class="questions-wrapper__img">
-          <ImageLazy
-            :alt="'заказать звонок'"
-            :src="'questions-img'"
-            :animation="true"
-          />
+          <picture>
+            <img
+              :src="
+                'build/images/' +
+                'questions-img' +
+                (getWebp == 'webp' ? '.webp' : '.png')
+              "
+              alt="заказать звонок"
+            />
+          </picture>
         </div>
       </div>
     </div>
@@ -27,7 +32,7 @@
 
 <script>
 import QuestionsForm from "../components/QuestionsForm.vue";
-import ImageLazy from "../helpers/ImageLazy.vue";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
@@ -35,8 +40,8 @@ export default {
   },
   components: {
     QuestionsForm,
-    ImageLazy,
   },
+  computed: mapGetters(["getWebp"]),
 };
 </script>
 
