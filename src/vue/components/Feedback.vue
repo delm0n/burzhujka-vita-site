@@ -322,6 +322,8 @@ export default {
       img {
         display: block;
         width: 100%;
+
+        aspect-ratio: 451/777;
       }
     }
   }

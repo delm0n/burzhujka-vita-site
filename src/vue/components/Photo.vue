@@ -109,6 +109,10 @@ export default defineComponent({
         left: 50%;
         transform: translateX(-50%);
         transition: all 0.6s;
+
+        &:not([data-ll-status="loaded"]) {
+          aspect-ratio: 497/393;
+        }
       }
 
       &:hover {

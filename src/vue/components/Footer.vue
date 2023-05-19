@@ -187,6 +187,8 @@ footer {
         line-height: 19px;
         color: #ffffff;
 
+        @include fluidFontSize(12, 16, 769, 1920);
+
         @media (max-width: 768px) {
           text-align: left;
           font-size: 12px;
@@ -300,6 +302,8 @@ footer {
         line-height: 140%;
         color: #ffffff;
         max-width: 563px;
+
+        @include fluidFontSize(10, 12, 769, 1920);
 
         @media (max-width: 768px) {
           font-weight: 400;

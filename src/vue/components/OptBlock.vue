@@ -546,14 +546,14 @@ form {
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 1px auto;
+    grid-template-rows: auto 1px auto;
     gap: 32px;
     @include mobileContent();
     max-width: none;
   }
 
   @media (max-width: 576px) {
-    grid-template-rows: 240px 1px auto;
+    grid-template-rows: auto 1px auto;
     gap: 16px;
   }
 }

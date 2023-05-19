@@ -165,6 +165,10 @@ export default defineComponent({
       img {
         width: 100%;
 
+        &:not([data-ll-status="loaded"]) {
+          aspect-ratio: 23/17;
+        }
+
         @media (max-width: 992px) {
           max-width: 350px;
           width: 100%;

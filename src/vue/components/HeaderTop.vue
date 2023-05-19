@@ -253,7 +253,7 @@ export default {
   &__contact {
     @include flex-center-x(30px);
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1024px) {
       gap: 20px;
     }
 
@@ -345,7 +345,7 @@ export default {
     .menu-list {
       @include flex-center-x(35px);
 
-      @media (max-width: 1280px) {
+      @media (max-width: 1024px) {
         flex-direction: column;
         align-items: start;
         gap: 10px;
@@ -388,7 +388,7 @@ export default {
             color: #e2bc85;
           }
 
-          @media (max-width: 1280px) {
+          @media (max-width: 1024px) {
             color: $gray;
             padding: 5px 0;
             font-size: 18px;
@@ -400,7 +400,7 @@ export default {
 
   .burger {
     &-container {
-      @media (min-width: 1281px) {
+      @media (min-width: 1025px) {
         display: none;
       }
 

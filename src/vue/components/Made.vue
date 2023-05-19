@@ -8,7 +8,26 @@
             :key="index"
             class="swiper-slide"
           >
-            <image-lazy :src="item.src" :alt="item.alt" :srcMedia="425" />
+            <picture>
+              <source
+                :srcset="
+                  'build/images/x05/' +
+                  item.src +
+                  (getWebp == 'webp' ? '.webp' : '.png')
+                "
+                :media="'(max-width:' + 425 + 'px)'"
+                :type="getWebp == 'webp' ? 'image/webp' : 'image/png'"
+              />
+
+              <img
+                :src="
+                  'build/images/' +
+                  item.src +
+                  (getWebp == 'webp' ? '.webp' : '.png')
+                "
+                :alt="item.alt"
+              />
+            </picture>
           </div>
         </div>
         <swiper-navigation
