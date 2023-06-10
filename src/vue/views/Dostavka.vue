@@ -26,12 +26,11 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
+import DostavkaBlock from '../components/DostavkaBlock.vue'
 
 export default {
   components: {
-    DostavkaBlock: defineAsyncComponent(() =>
-      import("../components/DostavkaBlock.vue")
-    ),
+    DostavkaBlock,
     Delivery: defineAsyncComponent(() => import("../components/Delivery.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },

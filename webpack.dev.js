@@ -2,11 +2,11 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const CopyPlugin = require("copy-webpack-plugin");
-const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+// const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
-const CopyPlugin = require("@spinodev/copy-webpack-plugin-cached");
+// const CopyPlugin = require("@spinodev/copy-webpack-plugin-cached");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
 
 module.exports = {
@@ -80,17 +80,21 @@ module.exports = {
     minimize: false,
   },
   plugins: [
-    new FileManagerPlugin({
-      events: {
-        onStart: {
-          copy: [
-            {
-              source: "./src/copy_cache",
-              destination: "./asset_cache/",
-            },
-          ],
-        },
-      },
+    // new FileManagerPlugin({
+    //   events: {
+    //     onStart: {
+    //       copy: [
+    //         {
+    //           source: "./src/copy_cache",
+    //           destination: "./asset_cache/",
+    //         },
+    //       ],
+    //     },
+    //   },
+    // }),
+
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!images", "!images/**/*"],
     }),
 
     new MiniCssExtractPlugin({
@@ -103,29 +107,53 @@ module.exports = {
       patterns: [
         {
           from: "./src/images",
-          to: "./images",
-          force: false,
+          to: "./images/[path][name].webp",
+          toType: "template",
+          globOptions: {
+            copyUnmodified: true,
+            force: false,
+            ignore: ["/**/*.svg"],
+          },
         },
-      ],
-      options: {
-        cacheLocation: "./asset_cache/copy_cache",
-      },
-    }),
-    new ImageminWebpWebpackPlugin({
-      config: [
+
         {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 100,
+          from: "./src/images",
+          to: "./images",
+          globOptions: {
+            copyUnmodified: true,
+            force: false,
           },
         },
       ],
-      overrideExtension: true,
-      detailedLogs: false,
-      silent: false,
-      strict: true,
     }),
 
-    new CleanWebpackPlugin(),
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: "./src/images",
+    //       to: "./images",
+    //       force: false,
+    //     },
+    //   ],
+    //   options: {
+    //     cacheLocation: "./asset_cache/copy_cache",
+    //   },
+    // }),
+    // new ImageminWebpWebpackPlugin({
+    //   config: [
+    //     {
+    //       test: /\.(jpe?g|png)/,
+    //       options: {
+    //         quality: 100,
+    //       },
+    //     },
+    //   ],
+    //   overrideExtension: true,
+    //   detailedLogs: false,
+    //   silent: false,
+    //   strict: true,
+    // }),
+
+    // new CleanWebpackPlugin(),
   ],
 };

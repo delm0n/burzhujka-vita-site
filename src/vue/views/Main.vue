@@ -32,7 +32,6 @@ import CharacteristicSize from "../components/CharacteristicSize.vue";
 import Characteristic from "../components/Characteristic.vue";
 import CharacteristicRound from "../components/CharacteristicRound.vue";
 import Made from "../components/Made.vue";
-import Complectation from "../components/Complectation.vue";
 import Heating from "../components/Heating.vue";
 import Together from "../components/Together.vue";
 import Feedback from "../components/Feedback.vue";

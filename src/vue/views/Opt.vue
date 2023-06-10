@@ -8,10 +8,11 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
+import OptBlock from "../components/OptBlock.vue";
 
 export default {
   components: {
-    OptBlock: defineAsyncComponent(() => import("../components/OptBlock.vue")),
+    OptBlock,
     Made: defineAsyncComponent(() => import("../components/Made.vue")),
     VitaFaq: defineAsyncComponent(() => import("../components/FAQ.vue")),
   },
