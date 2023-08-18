@@ -34,7 +34,7 @@
             <div class="peculiar-wrapper__content">
               <div class="content-line"></div>
               <div class="content-content">
-                <h4 v-html="peculiar.title"></h4>
+                <h3 v-html="peculiar.title"></h3>
                 <p v-html="peculiar.text"></p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default defineComponent({
       }
 
       .content-content {
-        h4 {
+        h3 {
           font-family: "Roboto";
           font-style: normal;
           font-weight: 700;

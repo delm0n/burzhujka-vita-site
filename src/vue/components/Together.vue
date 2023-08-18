@@ -37,9 +37,12 @@
               />
 
               <div class="dops-item__content">
-                <h5 @click="openModal(dop.id, dop.name, dop.img.src)">
+                <p
+                  class="item-title"
+                  @click="openModal(dop.id, dop.name, dop.img.src)"
+                >
                   {{ dop.name }}
-                </h5>
+                </p>
                 <p class="oldprice">{{ dop.oldPrice }} ₽</p>
                 <p class="price">{{ dop.price }} ₽</p>
               </div>
@@ -403,7 +406,7 @@ export default {
         &__content {
           flex-grow: 1;
 
-          h5 {
+          .item-title {
             font-weight: 500;
             font-size: 24px;
             line-height: 115%;

@@ -1,6 +1,6 @@
 <template>
   <form action="sendOrder.php" class="spnForm together-form">
-    <h4>Заказ</h4>
+    <p class="form-title">Заказ</p>
 
     <div class="line"></div>
 
@@ -150,7 +150,7 @@ form.together-form {
     gap: 16px;
   }
 
-  h4 {
+  .form-title {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 500;

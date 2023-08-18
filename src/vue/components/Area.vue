@@ -23,7 +23,7 @@
             </div>
 
             <div class="aria-item__content">
-              <h4 v-html="item.title"></h4>
+              <h3 v-html="item.title"></h3>
               <div class="aria-item__content-p">
                 <p class="area">Площадь: <span v-html="item.area"></span></p>
                 <p class="temp">
@@ -199,7 +199,7 @@ export default {
         }
       }
 
-      h4 {
+      h3 {
         font-family: "Roboto";
         font-style: normal;
         font-weight: 700;

@@ -10,21 +10,13 @@
           >
             <picture>
               <source
-                :srcset="
-                  'build/images/x05/' +
-                  item.src +
-                  (getWebp == 'webp' ? '.webp' : '.png')
-                "
+                :srcset="'build/images/x05/' + item.src + '.webp'"
                 :media="'(max-width:' + 425 + 'px)'"
                 :type="getWebp == 'webp' ? 'image/webp' : 'image/png'"
               />
 
               <img
-                :src="
-                  'build/images/' +
-                  item.src +
-                  (getWebp == 'webp' ? '.webp' : '.png')
-                "
+                :src="'build/images/' + item.src + '.webp'"
                 :alt="item.alt"
               />
             </picture>

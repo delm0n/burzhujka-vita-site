@@ -463,16 +463,16 @@ export default defineComponent({
 
         &.button-ozon {
           .button-background {
-            background-color: #0085ff;
-            box-shadow: 0px 6px 24px rgba(#0085ff, 0);
+            background-color: #0a78d4;
+            box-shadow: 0px 6px 24px rgba(#0a78d4, 0);
           }
 
           &:hover,
           &:focus {
             .button-background {
               transition: all 0.2s ease-in 0.1s;
-              background-color: darken(#0085ff, 2%);
-              box-shadow: 0px 6px 24px rgba(#0085ff, 0.39);
+              background-color: darken(#0a78d4, 2%);
+              box-shadow: 0px 6px 24px rgba(#0a78d4, 0.39);
 
               &::before {
                 opacity: 0;
