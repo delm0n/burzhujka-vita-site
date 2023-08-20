@@ -5,7 +5,7 @@
       обратный звонок
     </h3>
 
-    <form action="" class="spnForm">
+    <form action="" v-on:submit.prevent class="spnForm">
       <div class="user-info">
         <input
           class="vita-input"

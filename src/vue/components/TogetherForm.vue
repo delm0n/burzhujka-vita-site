@@ -1,5 +1,6 @@
 <template>
-  <form action="sendOrder.php" class="spnForm together-form">
+  <form action=""
+    v-on:submit.prevent class="spnForm together-form">
     <p class="form-title">Заказ</p>
 
     <div class="line"></div>

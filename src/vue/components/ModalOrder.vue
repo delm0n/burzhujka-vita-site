@@ -10,7 +10,7 @@
       <p ref="oldPrice" class="old-price">{{ oldPrice }} ₽</p>
     </div>
 
-    <form action="" class="spnForm">
+    <form action="" v-on:submit.prevent class="spnForm">
       <div class="user-info">
         <input
           class="vita-input"

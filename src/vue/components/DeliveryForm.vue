@@ -1,5 +1,5 @@
 <template>
-  <form action="" class="delivery-form">
+  <form action="" v-on:submit.prevent class="delivery-form">
     <h3>Рассчитать стоимость доставки</h3>
 
     <input type="hidden" name="statePanel" value="calcDelivery" />

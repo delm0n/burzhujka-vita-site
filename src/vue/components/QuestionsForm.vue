@@ -1,5 +1,6 @@
 <template>
-  <form action="sendCall.php" method="post" class="spnForm">
+  <form action=""
+    v-on:submit.prevent method="post" class="spnForm">
     <div class="user-info">
       <input
         class="vita-input"

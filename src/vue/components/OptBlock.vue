@@ -64,7 +64,7 @@
           </div>
 
           <div class="opt-form__form" id="opt-form">
-            <form class="section-send__form">
+            <form action="" v-on:submit.prevent class="section-send__form">
               <div class="user-info">
                 <input
                   autocomplete="off"
