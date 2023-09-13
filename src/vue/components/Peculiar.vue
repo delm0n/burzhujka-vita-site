@@ -133,11 +133,11 @@ export default defineComponent({
       }
 
       .peculiar-btn__prev {
-        left: 25px;
+        left: -15px;
       }
 
       .peculiar-btn__next {
-        right: 25px;
+        right: -15px;
       }
     }
   }

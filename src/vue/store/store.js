@@ -57,5 +57,9 @@ export default createStore({
     getModalSuccess(state) {
       return state.modalSuccess;
     },
+
+    getLastDayOfMonth(state) {
+      return "30 сентября";
+    },
   },
 });

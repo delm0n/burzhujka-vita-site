@@ -2,14 +2,17 @@
   <div>
     <vita-header />
     <main>
-      <characteristic-size />
+      <vita-area />
       <characteristic />
+      <characteristic-size />
+
+      <!-- <characteristic-size /> -->
+      <!-- <characteristic /> -->
       <heating />
-      <characteristic-round />
+      <!-- <characteristic-round /> -->
       <tinkoff-block />
       <peculiar />
       <complectation />
-      <vita-area />
       <together />
       <delivery />
       <vita-faq />
@@ -28,9 +31,13 @@
 <script>
 import { defineAsyncComponent } from "vue";
 import VitaHeader from "../components/Header.vue";
+// import CharacteristicSize from "../components/CharacteristicSize.vue";
+// import Characteristic from "../components/Characteristic.vue";
+// import CharacteristicRound from "../components/CharacteristicRound.vue";
+
 import CharacteristicSize from "../components/CharacteristicSize.vue";
-import Characteristic from "../components/Characteristic.vue";
-import CharacteristicRound from "../components/CharacteristicRound.vue";
+import Characteristic from "../components/Characteristic-v2.vue";
+//
 import Made from "../components/Made.vue";
 import Heating from "../components/Heating.vue";
 import Together from "../components/Together.vue";
@@ -42,7 +49,7 @@ export default {
     CharacteristicSize,
     Characteristic,
     Heating,
-    CharacteristicRound,
+    // CharacteristicRound,
     Peculiar: defineAsyncComponent(() => import("../components/Peculiar.vue")),
     Complectation: defineAsyncComponent(() =>
       import("../components/Complectation.vue")

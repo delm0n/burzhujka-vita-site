@@ -1,11 +1,10 @@
 <template>
-  <form action=""
-    v-on:submit.prevent class="spnForm together-form">
-    <p class="form-title">Заказ</p>
+  <form action="sendOrder.php" class="spnForm together-form">
+    <h3>Заказ</h3>
 
     <div class="line"></div>
 
-    <pech-model-checkbox
+    <PechModelCheckbox
       class="order-model"
       :icon="true"
       :spanValue="'Буржуйка-'"
@@ -51,17 +50,23 @@
         <span class="button-text">Заказать</span>
       </button>
     </div>
+
+    <form-helicon :main="true" />
   </form>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import FormHelicon from "../helpers/FormHelicon.vue";
 import PechModelCheckbox from "../helpers/PechModelCheckbox.vue";
+import RassrochkaCheckbox from "../helpers/RassrochkaCheckbox.vue";
 
 export default {
   methods: mapMutations(["openModalSuccessManager"]),
   components: {
+    FormHelicon,
     PechModelCheckbox,
+    RassrochkaCheckbox,
   },
   computed: {
     ...mapGetters(["getPrice"]),
@@ -126,10 +131,14 @@ form.together-form {
   padding: 15px 13px 22px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 40px;
+
+  @media (max-width: 1366px) {
+    gap: 30px;
+  }
 
   .line {
-    @media (max-width: 1250px) and (min-width: 767px) {
+    @media (max-width: 1250px) and (min-width: 768px) {
       height: 90% !important;
       grid-column: 2/3;
       align-self: center;
@@ -137,7 +146,7 @@ form.together-form {
     }
   }
 
-  @media (max-width: 1250px) and (min-width: 767px) {
+  @media (max-width: 1250px) and (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
     gap: 20px;
@@ -147,11 +156,11 @@ form.together-form {
     padding: 24px 20px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     gap: 16px;
   }
 
-  .form-title {
+  h3 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
@@ -159,13 +168,14 @@ form.together-form {
     line-height: 35px;
     text-align: center;
     color: #323232;
-    margin-bottom: -6px;
+    // margin-bottom: -6px;
+    padding-top: 20px;
 
     @media (max-width: 1250px) {
       grid-column: 1/4;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       font-size: 22px;
       line-height: 26px;
     }

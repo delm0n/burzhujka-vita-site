@@ -23,6 +23,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory("/burzhujka-vita-site/"),
+  // history: createWebHistory(""),
+
   routes,
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top

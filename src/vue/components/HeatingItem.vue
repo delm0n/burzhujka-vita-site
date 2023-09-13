@@ -32,7 +32,7 @@ import { defineComponent } from "vue";
 import type { PropType } from "vue";
 import ImageLazy from "../helpers/ImageLazy.vue";
 import IconPlus from "../helpers/IconPlus.vue";
-import IHeating from "../types/Heating";
+import IHeating from "../types/IHeating";
 
 export default defineComponent({
   props: {
@@ -53,6 +53,16 @@ export default defineComponent({
 
 article.heating-item {
   height: auto;
+  @media (min-width: 993px) {
+    @media (max-width: 1400px) {
+      max-width: 400px;
+      width: 100% !important;
+    }
+
+    @media (max-width: 1125px) {
+      max-width: 350px;
+    }
+  }
 
   .heating-item-container {
     @extend %shadow-block;
@@ -95,7 +105,12 @@ article.heating-item {
     width: 100%;
     img {
       width: 100%;
-      aspect-ratio: 1/1;
+
+      &:not([data-ll-status="loaded"]) {
+        aspect-ratio: 1/1;
+        width: 100%;
+      }
+
       @media (max-width: 992px) {
         max-width: 400px;
         margin: 0 auto;

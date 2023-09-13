@@ -59,7 +59,7 @@ export default defineComponent({
           content: "Печь-буржуйка «VITA»",
           list: ["Съёмные ножки", "Зольник/совок"],
         },
-        { content: "Внутренний<br> шестигранный&nbsp;ключ" },
+        { content: "Внутренний <br> шестигранный ключ" },
       ],
 
       text2: [

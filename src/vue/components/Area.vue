@@ -98,12 +98,12 @@ export default {
   @media (min-width: 993px) {
     padding: 0 40px 50px;
 
-    @media (max-width: 1280px) {
-      padding: 0 30px 40px;
+    @media (max-width: 1440px) {
+      padding: 0 20px 40px 30px;
     }
 
-    @media (max-width: 1080px) {
-      padding: 0 20px 30px;
+    @media (max-width: 1125px) {
+      padding: 0 18px 26px;
     }
   }
 }

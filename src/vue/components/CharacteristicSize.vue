@@ -5,9 +5,8 @@
         <h2>
           Характеристики
           <span class="block">
-            <span class="quotes">«</span> &nbsp;<span class="title">VITA</span>
-            &nbsp;<span class="quotes">»</span></span
-          >
+            <span class="title">VITA</span>
+          </span>
         </h2>
         <p>Печь на все случаи жизни</p>
       </div>
@@ -18,11 +17,8 @@
             <h2>
               Характеристики
               <span class="block">
-                <span class="quotes">«</span> &nbsp;<span class="title"
-                  >VITA</span
-                >
-                &nbsp;<span class="quotes">»</span></span
-              >
+                <span class="title">VITA</span>
+              </span>
             </h2>
             <p>Печь на все случаи жизни</p>
           </div>
@@ -36,7 +32,7 @@
                 ]"
                 @click="changeActive(PechType.Mini)"
               >
-                <span> Мини</span>
+                <span> Mini</span>
               </div>
               <div
                 :class="[
@@ -45,7 +41,7 @@
                 ]"
                 @click="changeActive(PechType.Standart)"
               >
-                <span> Стандарт</span>
+                <span> Standart</span>
               </div>
             </div>
           </div>
@@ -92,22 +88,19 @@
                     ></span
                     > 
                   </p>
-                  <p
-                    class="profile-decription span--animation"
-                    v-html="objectPech[activePech].profile.decr"
-                  ></p>
+                  <p class="profile-decription">
+                    Печь можно переносить вручную или перевозить удобным для вас
+                    способом: на тележке, санках, в багажнике автомобиля.
+                  </p>
                 </div>
 
                 <div class="char-wrap__item">
                   <h3>
-                    Толщина стали СТ3:
-                    <span v-html="objectPech[activePech].density"></span>
+                    <span v-html="objectPech[activePech].paint"></span>
                   </h3>
                   <p>
-                    VITA надёжно защищена от прогорания — в самом раскалённом
-                    месте (в верху топки) печь усилена до&nbsp;<span>
-                      8&nbsp;мм.</span
-                    >
+                    Покрытие имеет подтверждённый срок службы до 25 лет и
+                    соответствует пожаробезопасным группам Г1, В1, Т2, Д2.
                   </p>
                 </div>
               </div>
@@ -115,7 +108,7 @@
               <div class="char-wrap__row">
                 <div class="char-wrap__item">
                   <h3>
-                    Отапливаемая площадь: до&nbsp;<span
+                    Площадь обогрева: до&nbsp;<span
                       class="span--animation"
                       v-html="objectPech[activePech].square"
                     ></span>
@@ -128,16 +121,32 @@
 
                 <div class="char-wrap__item">
                   <h3>
-                    <span v-html="objectPech[activePech].paint"></span>
+                    Толщина стали СТ3:
+                    <span v-html="objectPech[activePech].density"></span>
+                  </h3>
+                  <p>VITA надёжно защищена от прогорания.</p>
+                </div>
+
+                <!-- <div class="char-wrap__item">
+                  <h3>
+                    Глубина топки:
+                    <span
+                      class="span--animation"
+                      v-html="objectPech[activePech].firewood"
+                    ></span>
                   </h3>
                   <p>
-                    Покрытие имеет  подтверждённый срок службы до 25 лет и
-                    соответствует пожаробезопасным группам Г1, В1, Т2, Д2.
+                    Выберите приемлемую глубину топки для своих потребностей.
                   </p>
-                </div>
+                </div> -->
               </div>
 
-              <div class="char-wrap__row">
+              <div
+                :class="[
+                  'char-wrap__row',
+                  len % 2 == 0 ? '' : 'char-wrap__row--last',
+                ]"
+              >
                 <div class="char-wrap__item">
                   <h3>
                     Вес: до
@@ -150,17 +159,6 @@
                     Благодаря облегчённой конструкции вы можете взять печку с
                     собой куда угодно! 
                   </p>
-                </div>
-
-                <div class="char-wrap__item">
-                  <h3>
-                    Длина дров:
-                    <span
-                      class="span--animation"
-                      v-html="objectPech[activePech].firewood"
-                    ></span>
-                  </h3>
-                  <p>Выберите подходящий размер дров для своих нужд.</p>
                 </div>
               </div>
             </div>
@@ -183,7 +181,7 @@
               href="#modal-order"
             >
               <span class="button-background"></span>
-              <span class="button-text">Заказать</span>
+              <span class="button-text">Заказать у производителя</span>
             </a>
           </div>
         </div>
@@ -198,15 +196,31 @@ import { defineComponent } from "vue";
 import { characteristicSize } from "../types/PechSize";
 import { PechType } from "../types/IPech";
 
+// import buttonAnimated from "../mixins/buttonAnimated.js";
+
 export default defineComponent({
   data() {
     return {
       PechType,
       activeTab: PechType.Mini,
       objectPech: characteristicSize,
+      len: 0,
     };
   },
-
+  // mixins: [buttonAnimated],
+  // mounted() {
+  //   //mixin
+  //   //@ts-ignore
+  //   this.btnAnim(
+  //     ".characteristic-size",
+  //     ".size-wrapper__button a.button-order"
+  //   );
+  //   //@ts-ignore
+  //   this.btnAnim(".characteristic-size", ".size-wrapper__button a.button-ozon");
+  //   this.$nextTick(function () {
+  //     this.len = document.querySelectorAll(".char-wrap__item").length;
+  //   });
+  // },
   methods: {
     changeActive(bool: PechType) {
       if (this.activeTab != bool) {
@@ -259,6 +273,24 @@ export default defineComponent({
 
 .characteristic-size {
   @extend %indent-p;
+
+  .size-wrapper__button .button {
+    @media (max-width: 992px) {
+      width: 230px;
+      height: 65px;
+
+      @media (min-width: 577px) {
+        .button-text {
+          font-size: 17px;
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      width: 195px;
+      height: 55px;
+    }
+  }
 
   .title {
     gap: 30px;
@@ -499,11 +531,14 @@ export default defineComponent({
       justify-content: space-between;
       gap: 25px;
 
-      // @media (min-width: 993px) {
-      //   &:last-child {
-      //     width: max-content;
-      //   }
-      // }
+      &--last {
+        @media (min-width: 993px) {
+          &:last-child {
+            width: max-content;
+          }
+        }
+      }
+
       @media (max-width: 1439px) {
         flex-wrap: wrap;
         border-top: none;
@@ -527,11 +562,19 @@ export default defineComponent({
       width: 420px;
       padding-top: 6px;
 
+      @media (max-width: 1680px) {
+        width: 360px;
+      }
+
       @media (max-width: 1439px) {
         padding-top: 8px;
 
         width: 100%;
         max-width: 500px;
+      }
+
+      @media (max-width: 1125px) {
+        max-width: 375px;
       }
 
       @media (max-width: 992px) {
@@ -596,13 +639,13 @@ export default defineComponent({
         }
       }
 
-      .profile-decription {
-        min-height: 115px;
+      // .profile-decription {
+      //   min-height: 115px;
 
-        @media (max-width: 1366px) {
-          min-height: 89px;
-        }
-      }
+      //   @media (max-width: 1366px) {
+      //     min-height: 89px;
+      //   }
+      // }
     }
   }
 

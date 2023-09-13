@@ -8,68 +8,76 @@
 
       <div class="together-wrapper">
         <div class="together-wrapper__dops">
-          <template v-for="(dop, index) in getDops" :key="index">
-            <div class="checkbox dops-item">
-              <input type="checkbox" v-model="dop.active" />
-              <div class="box" @click="dopClick(dop)">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="14"
-                  viewBox="0 0 18 14"
-                  fill="none"
+          <div class="dops-container">
+            <div class="dops-list">
+              <template v-for="(dop, index) in getDopsTest" :key="index">
+                <div
+                  class="checkbox dops-item"
+                  @mouseenter="togetherHoverEnter(dop.id)"
+                  @mouseleave="togetherHoverLeave(dop.id)"
                 >
-                  <path
-                    d="M1 7.56424L5.92308 12.4531L17 1.45312"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <input type="checkbox" v-model="dop.active" />
+                  <div class="box" @click="dopClick(dop)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="14"
+                      viewBox="0 0 18 14"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 7.56424L5.92308 12.4531L17 1.45312"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+
+                  <image-lazy
+                    @click="dopClick(dop)"
+                    :src="dop.img.src"
+                    :alt="dop.img.alt"
                   />
-                </svg>
-              </div>
 
-              <image-lazy
-                @click="dopClick(dop)"
-                :src="dop.img.src"
-                :alt="dop.img.alt"
-                :animation="false"
-              />
-
-              <div class="dops-item__content">
-                <p
-                  class="item-title"
-                  @click="openModal(dop.id, dop.name, dop.img.src)"
-                >
-                  {{ dop.name }}
-                </p>
-                <p class="oldprice">{{ dop.oldPrice }} ₽</p>
-                <p class="price">{{ dop.price }} ₽</p>
-              </div>
+                  <div class="dops-item__content">
+                    <p class="title-dop" @click="openModal(dop)">
+                      {{
+                        dop.name === "Зонтик для дымохода" ? "Зонт" : dop.name
+                      }}
+                    </p>
+                    <p class="oldprice">{{ dop.oldPrice }} ₽</p>
+                    <p class="price">{{ dop.price }} ₽</p>
+                  </div>
+                </div>
+              </template>
             </div>
-            <template v-if="index != getDops.length - 1">
-              <div class="line"></div>
-            </template>
-          </template>
+          </div>
         </div>
 
         <div class="together-wrapper__img">
           <div class="img-container">
-            <template v-for="(dop, index) in dops" :key="index">
-              <img
-                v-if="dop.img"
+            <template v-for="(dop, index) in getDopsTest" :key="index">
+              <div
+                v-if="dop.together.img"
                 :class="[
-                  'dops-img image-lazy',
-                  dop.img,
+                  'dops-img',
+                  dop.together.img,
                   dop.active ? 'dops-img--active' : '',
+                  dop.together.hover ? 'dops-img--hover' : '',
                 ]"
-                :data-src="
-                  'build/images/' +
-                  dop.img +
-                  (getWebp == 'webp' ? '.webp' : '.png')
-                "
-                alt="Дополнительно к буржуйке VITA"
-              />
+              >
+                <img
+                  class="image-lazy"
+                  :data-src="
+                    'build/images/' +
+                    dop.together.img +
+                    (getWebp == 'webp' ? '.webp' : '.png')
+                  "
+                  alt="Дополнительно к буржуйке VITA"
+                />
+              </div>
             </template>
 
             <div class="together-main__container" v-html="img"></div>
@@ -100,7 +108,7 @@
             {{ modalContent.title }}
           </div>
 
-          <p v-text="modalContent.decr"></p>
+          <p v-html="modalContent.decr"></p>
 
           <div>
             <p v-for="(item, index) in modalContent.decrList" :key="index">
@@ -132,132 +140,18 @@ export default {
         decrList: [],
         decrBottom: "",
       },
-
-      dops: [
-        {
-          id: [goods.convector_standart, goods.convector_mini],
-          decr: "Расположенные по бокам конвекторы пропускают комнатный воздух, согревают его и направляют обратно в помещение. Всего за полчаса комната, баня или гараж прогреваются до комфортной температуры.",
-          decrList: [
-            {
-              bold: "Количество конвекторов",
-              par: "18",
-            },
-            {
-              bold: "Площадь нагрева одного конвектора",
-              par: "267 см²",
-            },
-            {
-              bold: "Материал",
-              par: "сталь Ст3",
-            },
-            {
-              bold: "Толщина материала",
-              par: "1 мм",
-            },
-            {
-              bold: "Покрытие",
-              par: "термостойкая краска ",
-            },
-          ],
-          active: false,
-        },
-
-        {
-          id: [goods.door_standart, goods.door_mini],
-          decr: "Версия дверцы со стеклянной вставкой, которая позволяет следить за нагревом и любоваться пламенем.",
-          decrList: [
-            {
-              bold: "Материал",
-              par: "сталь Ст3",
-            },
-            {
-              bold: "Толщина материала",
-              par: "1 мм",
-            },
-            {
-              bold: "Размер",
-              par: "183x183 мм",
-            },
-          ],
-          active: false,
-        },
-
-        {
-          id: [goods.tubing],
-          decrList: [
-            {
-              bold: "Диаметр",
-              par: "110 мм",
-            },
-            {
-              bold: "Материал",
-              par: "сталь AISI 304",
-            },
-            {
-              bold: "Толщина",
-              par: "0,8 мм",
-            },
-          ],
-          decr: "Трубы из стали — легче и долговечнее чугунных. Благодаря небольшому весу, их удобнее закреплять в месте расположения дымохода. Комплектация предусматривает различные варианты соединения труб.",
-          decrBottom: "В комплекте 2 трубы длиной 100 см, 2 отвода и зонтик",
-          img: "together-tube",
-          active: false,
-        },
-
-        {
-          id: [goods.coherga_standart, goods.coherga_mini],
-          decrList: [
-            {
-              bold: "Материал",
-              par: "сталь Ст3",
-            },
-            {
-              bold: "Толщина материала ",
-              par: "4 мм",
-            },
-            {
-              bold: "Покрытие",
-              par: "термостойкая краска CERTA 900",
-            },
-          ],
-          decr: "Полезное дополнение для печи-буржуйки, мангала или камина. Кочерга имеет зубья со всех сторон, благодаря которым уголь дробится гораздо эффективнее. Чистите колосник и убирайте продукты горения ещё проще! Изделие выполнено из толстой стали, поэтому прослужит вам целую вечность!",
-          img: "together-coherga",
-          active: false,
-        },
-
-        {
-          id: [goods.list],
-          decrList: [
-            {
-              bold: "Материал",
-              par: "сталь Ст3",
-            },
-            {
-              bold: "Толщина материала",
-              par: "1 мм",
-            },
-            {
-              bold: "Размер",
-              par: "500x400 мм",
-            },
-          ],
-          decr: "Стальной округлый лист для защиты напольного покрытия от искр, углей и сажи. Попадая на него, искры гаснут, а угли не пачкают пол, поэтому снижается риск возгорания и сохраняется чистота в помещении.",
-          img: "together-list",
-          active: false,
-        },
-      ],
     };
   },
   methods: {
-    openModal(id, title, src) {
-      let dop = this.dops.find((el) => el.id.includes(id));
+    openModal(dop) {
+      // let dop = this.getDopsTest.find((el) => el.id == id);
 
       this.modalContent = {
-        title: title,
-        src: src,
-        decr: dop.decr,
-        decrList: dop.decrList,
-        decrBottom: dop.decrBottom,
+        title: dop.together.modalTitle ? dop.together.modalTitle : dop.name,
+        src: dop.img.src,
+        decr: dop.together.decr,
+        decrList: dop.together.decrList,
+        decrBottom: dop.together.decrBottom,
       };
       setTimeout(() => {
         Fancybox.show([
@@ -269,14 +163,18 @@ export default {
     },
     dopClick(dop) {
       dop.active = !dop.active;
-      this.dops.forEach((element) => {
-        element.id.includes(dop.id) ? (element.active = dop.active) : "";
-      });
+    },
+
+    togetherHoverEnter(id) {
+      this.getDopsTest.find((el) => el.id == id).together.hover = true;
+    },
+    togetherHoverLeave(id) {
+      this.getDopsTest.find((el) => el.id == id).together.hover = false;
     },
   },
   computed: {
     ...mapGetters([
-      "getDops",
+      "getDopsTest",
       "getWebp",
       "getPechModelsActive",
       "getDopsDoorActive",
@@ -317,7 +215,9 @@ export default {
 
 #together {
   @extend %indent-p;
-
+  @media (max-width: 767px) {
+    overflow: hidden;
+  }
   .container {
     @media (max-width: 992px) {
       min-width: calc(100% - 40px) !important;
@@ -327,27 +227,33 @@ export default {
   .together-wrapper {
     @include flex-center-x(20px);
     width: 100%;
+    align-items: stretch;
+
+    @media (max-width: 1400px) {
+      gap: 5px;
+    }
 
     @media (min-width: 1581px) {
-      padding-top: 64px;
+      padding-top: 20px;
     }
 
     @media (max-width: 1250px) {
       flex-wrap: wrap;
       justify-content: space-between;
 
-      max-width: 1050px;
+      max-width: 900px;
       margin: 0 auto;
       gap: 40px;
     }
 
     @media (max-width: 992px) {
-      gap: 30px;
+      gap: 30px 15px;
     }
 
     @media (max-width: 767px) {
       flex-wrap: nowrap;
       flex-direction: column;
+      gap: 20px;
     }
 
     .line {
@@ -358,17 +264,67 @@ export default {
 
     &__dops {
       @extend %shadow-block;
-      padding: 10px 20px 20px;
-      max-width: 457px;
-      min-width: 375px;
+      padding: 10px 12px 20px 20px;
+      max-width: 440px;
+      min-width: 360px;
+      flex-grow: 1;
 
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+      .dops-container {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
 
-      @media (max-width: 1250px) and (min-width: 576px) {
-        gap: 10px;
+      .dops-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+        justify-content: space-between;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        padding-right: 10px;
+        position: absolute;
+        width: 100%;
+
+        @media (max-width: 767px) {
+          height: 440px;
+          position: static;
+          gap: 15px;
+        }
+
+        &::-webkit-scrollbar {
+          width: 2px;
+          background-color: #cecece;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgb(70, 130, 23, 0.7);
+          z-index: 1;
+          cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: rgba(239, 239, 239, 0.2);
+        }
+      }
+
+      // align-self: stretch;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-around;
+
+      // @media (min-width: 576px) {
+      //   gap: 10px;
+      // }
+
+      @media (max-width: 1440px) {
+        // padding: 10px 15px 20px;
+        max-width: 360px;
+        min-width: 340px;
       }
 
       @media (max-width: 767px) {
@@ -376,25 +332,40 @@ export default {
         max-width: 390px;
         margin: 0 auto;
         min-width: auto;
+        padding: 10px 12px 15px 18px;
       }
 
       .dops-item {
         display: flex;
         justify-content: space-between;
-        width: 95%;
+        width: 100%;
         gap: 25px;
         margin-left: auto;
+        &:not(:last-child) {
+          border-bottom: 1px solid #cecece;
+          padding-bottom: 20px;
+        }
 
         @media (max-width: 1440px) {
-          img {
-            max-width: 100px;
+          gap: 20px;
+        }
+
+        img {
+          &:not([data-ll-status="loaded"]) {
+            aspect-ratio: 148/133;
+          }
+
+          @media (max-width: 1560px) {
+            max-width: 90px;
+          }
+
+          @media (max-width: 1440px) {
+            max-width: 80px;
           }
         }
-        @media (max-width: 992px) {
+
+        @media (max-width: 768px) {
           gap: 15px;
-          img {
-            max-width: 85px;
-          }
         }
 
         @media (max-width: 576px) {
@@ -406,32 +377,30 @@ export default {
         &__content {
           flex-grow: 1;
 
-          .item-title {
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 115%;
-            margin-bottom: 14px;
-            white-space: normal;
-            font-family: "Roboto";
-            font-style: normal;
-            color: #2b2b2b;
-            transition: all 0.5s ease;
-
-            &:hover {
-              text-decoration: underline;
-            }
-
-            @media (max-width: 768px) {
-              font-size: 18px;
-              margin-bottom: 8px;
-            }
-
-            @include fluidFontSize(18, 22, 320, 1920);
-          }
           p {
             font-family: "Roboto";
             font-style: normal;
             color: #2b2b2b;
+
+            &.title-dop {
+              font-weight: 500;
+              font-size: 22px;
+              line-height: 115%;
+              margin-bottom: 14px;
+              white-space: normal;
+              transition: all 0.5s ease;
+
+              &:hover {
+                text-decoration: underline;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 18px;
+                margin-bottom: 8px;
+              }
+
+              @include fluidFontSize(18, 22, 320, 1920);
+            }
 
             &.oldprice {
               font-weight: 400;
@@ -467,7 +436,7 @@ export default {
       max-width: 410px;
       min-width: 200px;
 
-      @media (max-width: 1250px) and (min-width: 767px) {
+      @media (max-width: 1250px) and (min-width: 768px) {
         max-width: 100%;
         width: 100%;
       }
@@ -488,79 +457,138 @@ export default {
         min-width: auto;
 
         @media (min-width: 922px) {
-          margin-right: 5%;
+          margin-right: 2%;
         }
-      }
-
-      @media (max-width: 992px) {
-        max-width: 370px;
       }
 
       @media (max-width: 767px) {
         width: 100%;
-        max-width: 290px;
+        max-width: 320px;
         margin: 0 auto;
-        height: 420px;
+        height: 570px;
       }
 
       .img-container {
         position: relative;
         height: 100%;
 
-        @media (max-width: 1440px) and (min-width: 1251px) {
-          bottom: 10%;
+        @media (max-width: 1560px) and (min-width: 769px) {
+          height: 900px;
         }
 
-        @media (max-width: 1250px) and (min-width: 767px) {
-          max-height: 550px;
-          position: sticky;
-          top: 115px;
+        @media (max-width: 1280px) and (min-width: 1251px) {
+          height: 80%;
+          bottom: auto;
         }
 
-        @media (max-width: 992px) and (min-width: 767px) {
-          max-height: 475px;
-          top: 135px;
-        }
-
-        .together-tube {
-          left: 0;
-          bottom: 0;
-          width: 10vw;
-          max-width: 198px;
-          min-width: 65px;
-        }
-
-        .together-coherga {
-          width: 15vw;
-          max-width: 306px;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: 7vw;
-          min-width: 144px;
-
-          @media (max-width: 767px) {
-            bottom: 40px;
-            left: 45%;
+        @media (min-width: 768px) {
+          @media (max-width: 1250px) {
+            // max-height: 70%;
+            height: 746px;
+            position: sticky;
+            top: 80px;
           }
-        }
 
-        .together-list {
-          width: 16vw;
-          right: 0;
-          bottom: 0;
-          max-width: 322px;
-          min-width: 125px;
+          @media (max-width: 992px) {
+            top: 60px;
+          }
         }
 
         .dops-img {
           position: absolute;
-          display: block;
-          opacity: 0.4;
-          transition: all 0.2s ease-in;
+          img {
+            opacity: 0.4;
+            transition: all 0.2s ease-in;
+            display: block;
+            width: 100%;
+          }
+
+          &--active img {
+            opacity: 1;
+          }
+
+          &--hover img {
+            transform: scale(1.05);
+          }
         }
 
-        .dops-img--active {
-          opacity: 1;
+        .together-tube {
+          right: 0;
+          max-width: 198px;
+          min-width: 120px;
+          width: 27%;
+          top: 49%;
+          transform: translateY(-50%);
+
+          @media (max-width: 992px) {
+            min-width: 100px;
+          }
+        }
+
+        .together-ugol_smoke-2 {
+          left: 17%;
+          max-width: 100px;
+          min-width: 60px;
+          width: 20%;
+          top: 89%;
+          transform: translate(-50%);
+        }
+
+        .together-umbrella {
+          left: 40%;
+          max-width: 135px;
+          min-width: 80px;
+          width: 20%;
+          top: 88%;
+          transform: translate(-50%);
+        }
+
+        .together-tubing_smoke-2 {
+          left: 2%;
+          max-width: 350px;
+          min-width: 80px;
+          width: 57%;
+          top: 82.5%;
+          transform: translateY(-50%);
+        }
+
+        .together-coherga {
+          left: 0;
+          max-width: 318px;
+          min-width: 215px;
+          width: 48%;
+          top: 72%;
+          transform: translateY(-50%);
+
+          @media (max-width: 992px) {
+            min-width: 170px;
+          }
+        }
+
+        .together-list {
+          width: 48%;
+          left: 37%;
+          transform: translate(-50%);
+          max-width: 332px;
+          min-width: 210px;
+          top: 57%;
+
+          @media (max-width: 992px) {
+            min-width: 47%;
+          }
+        }
+
+        .together-woodcarry {
+          right: 2%;
+          top: 81.5%;
+          transform: translateY(-50%);
+          width: 29%;
+          max-width: 198px;
+          min-width: 120px;
+
+          @media (max-width: 992px) {
+            min-width: 95px;
+          }
         }
 
         .together-main {
@@ -570,32 +598,11 @@ export default {
 
           &__container {
             position: absolute;
-            left: 50%;
-            bottom: 9vw;
-            @media (min-width: 1921px) {
-              bottom: 175px;
-            }
-            @media (max-width: 1440px) {
-              bottom: 10vw;
-              left: 53%;
-            }
-            width: 79%;
-            transform: translateX(-50%);
-
-            @media (max-width: 1250px) {
-              width: 100%;
-              max-width: 300px;
-            }
-
-            @media (max-width: 992px) {
-              max-width: 290px;
-              bottom: 105px;
-              width: 82%;
-            }
-
-            @media (max-width: 767px) {
-              bottom: 80px;
-            }
+            left: 36%;
+            bottom: 66%;
+            width: 72%;
+            max-width: 446px;
+            transform: translateY(50%) translateX(-50%);
           }
         }
 
@@ -634,11 +641,15 @@ export default {
     &__img {
       width: 33%;
       @media (max-width: 768px) {
-        width: 240px;
+        max-width: 240px;
+        width: 100%;
       }
       img {
         display: block;
-        width: 100%;
+        width: auto;
+        margin: 0 auto;
+        max-width: 100%;
+        box-sizing: border-box;
       }
     }
 
@@ -674,7 +685,9 @@ export default {
 
       div p {
         margin: 5px 0;
-        white-space: nowrap;
+        @media (min-width: 340px) {
+          white-space: nowrap;
+        }
       }
 
       p {

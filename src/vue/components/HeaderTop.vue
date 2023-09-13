@@ -184,8 +184,8 @@ export default {
   }
 
   .container {
-    max-width: calc(1590px + 10px * 2);
     width: 100%;
+
     margin: 0 auto;
     padding: 0 20px;
 
@@ -213,6 +213,11 @@ export default {
     border-bottom: 1px solid #fff;
     margin: 0 auto;
 
+    max-width: calc(1590px + 10px * 2);
+    @media (min-width: 577px) {
+      width: 85%;
+    }
+
     .container {
       padding: 0;
     }
@@ -231,7 +236,6 @@ export default {
   &__logo {
     @include flex-center-x(30px);
     cursor: pointer;
-
     @media (max-width: 576px) {
       max-width: 70px;
     }
@@ -244,6 +248,10 @@ export default {
       line-height: 18px;
       color: #fff;
 
+      @media (max-width: 1530px) and (min-width: 1130px) {
+        display: none;
+      }
+
       @media (max-width: 576px) {
         display: none;
       }
@@ -253,7 +261,7 @@ export default {
   &__contact {
     @include flex-center-x(30px);
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1130px) {
       gap: 20px;
     }
 
@@ -345,7 +353,11 @@ export default {
     .menu-list {
       @include flex-center-x(35px);
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1537px) {
+        gap: 26px;
+      }
+
+      @media (max-width: 1130px) {
         flex-direction: column;
         align-items: start;
         gap: 10px;
@@ -374,7 +386,8 @@ export default {
       }
 
       li {
-        p {
+        p,
+        a {
           font-family: "IBM Plex Sans";
           font-style: normal;
           font-weight: 600;
@@ -388,7 +401,7 @@ export default {
             color: #e2bc85;
           }
 
-          @media (max-width: 1024px) {
+          @media (max-width: 1130px) {
             color: $gray;
             padding: 5px 0;
             font-size: 18px;
@@ -400,7 +413,7 @@ export default {
 
   .burger {
     &-container {
-      @media (min-width: 1025px) {
+      @media (min-width: 1131px) {
         display: none;
       }
 

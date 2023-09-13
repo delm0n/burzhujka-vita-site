@@ -32,13 +32,25 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+$rPech-2xl: 195px;
+$rPech-xl: 65px;
+$sdvg: -80px;
+
 @mixin main-bg($url, $url-mobile) {
   background: url($url) no-repeat;
-  background-position: top 0 right 0;
+  background-position: top 0 right $sdvg;
   background-size: cover;
 
+  @media (max-width: 1537px) {
+    //   background-position: top 0 right calc((-1) * $rPech-2xl + $rPech-xl + $sdvg);
+    // }
+
+    // @media (max-width: 1440px) {
+    background-position: top 0 right -129px;
+  }
+
   @media (max-width: 1366px) {
-    background-position: top 0 right -140px;
+    background-position: top 0 right calc((-1) * $rPech-2xl);
   }
 
   @media (max-width: 992px) {
@@ -54,20 +66,25 @@ export default defineComponent({
 
 @mixin pech-bg($url, $url-mobile) {
   background: url($url) no-repeat;
-  background-size: 700px;
-  background-position: top 0 right 16.7%;
 
-  @media (max-width: 1920px) {
-    background-size: contain;
-    background-position: top 0 right 173px;
-  }
+  background-size: 724px;
+  background-position: top 0 right calc($rPech-2xl + $sdvg);
 
   @media (max-width: 1537px) {
-    background-position: top 0 right 145px;
+    //   background-position: top 0 right calc($rPech-xl + $sdvg);
+    // }
+
+    // @media (max-width: 1440px) and (min-width: 1367px) {
+
+    @media (min-width: 1367px) {
+      background-size: 606px;
+      background-position: top 0 right 37px;
+    }
   }
 
   @media (max-width: 1366px) {
-    background-position: top 0 right 22px;
+    background-position: top 0 right 5px;
+    // background-size: 810px;
   }
 
   @media (max-width: 992px) {
@@ -85,8 +102,8 @@ export default defineComponent({
 header {
   position: relative;
   overflow: hidden;
-  max-width: 2560px;
   margin: 0 auto 100px;
+  max-width: 1920px;
 
   @media (max-width: 992px) {
     margin-bottom: 30px;

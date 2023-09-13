@@ -5,7 +5,7 @@
         <h1>
           <span class="before">Круглая буржуйка</span>
           <span class="decr"
-            >Самая дешевая <br />
+            >Самая бюджетная <br />
             конвекторная печь</span
           >
           <span class="name">VITA</span>
@@ -16,13 +16,16 @@
         <div class="features">
           <div class="features-row">
             <div class="features-item">
-              <h2>Прогрев всего за 15 минут</h2>
-              <p>Повышенный на 23% КПД</p>
+              <h2>Повышенный КПД на 23%</h2>
+              <p>
+                Благодаря установленному в камере <br />
+                буржуйки&nbsp;отбойнику
+              </p>
             </div>
 
             <div class="features-item">
               <h2>На все случаи жизни</h2>
-              <p>Обогреет палатку, дом, гараж, дачные дома</p>
+              <p>Обогреет палатку, дом, гараж</p>
             </div>
           </div>
 
@@ -36,11 +39,24 @@
             </div>
 
             <div class="features-item">
-              <h2>Любые виды топлива</h2>
-              <p>Дрова, уголь, брикеты, пеллеты</p>
+              <h2>Любые виды твёрдого топлива</h2>
+              <p>Дрова, уголь, брикеты</p>
+            </div>
+
+            <div class="features-item features-item-mobile">
+              <h2>Ограниченное предложение!</h2>
+              <p>
+                Закажите буржуйку VITA до {{ getLastDayOfMonth }} <br />
+                со скидкой<span>&nbsp;49% </span>
+              </p>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="sale-wrap">
+        <p>Ограниченное предложение!</p>
+        <p>Закажите буржуйку VITA до {{ getLastDayOfMonth }} со скидкой 49%</p>
       </div>
 
       <div class="offer-wrap">
@@ -72,11 +88,7 @@
         </div>
 
         <div class="video-container" style="height: 100%">
-          <a
-            class="video"
-            data-fancybox
-            href="https://www.youtube.com/watch?v=V8TqI1c2evs"
-          >
+          <a class="video" data-fancybox href="https://youtu.be/Te5sxFVxLR8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="110"
@@ -110,6 +122,7 @@
 </template>
 
 <script lang="ts">
+// import buttonAnimated from "../mixins/buttonAnimated.js";
 import IconPlus from "../helpers/IconPlus.vue";
 import Colors from "../types/ColorsEnum";
 import { defineComponent } from "vue";
@@ -199,7 +212,7 @@ export default defineComponent({
       Fancybox.close();
     },
   },
-  computed: mapGetters(["getWebp"]),
+  computed: mapGetters(["getWebp", "getLastDayOfMonth"]),
 });
 </script>
 
@@ -256,12 +269,17 @@ export default defineComponent({
 @import "tippy.js/animations/scale.css";
 
 .header-wrap {
-  padding: 260px 0 230px;
+  padding: 260px 0 130px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  // @media (max-width: 1440px) {
   @media (max-width: 1537px) {
-    padding: 180px 0 140px;
+    padding: 160px 0 100px;
+  }
+
+  @media (max-width: 1366px) {
+    padding: 180px 0 70px;
   }
 
   @media (max-width: 992px) {
@@ -293,6 +311,11 @@ export default defineComponent({
   grid-row: 2/3;
   z-index: 4;
 
+  @media (max-width: 1537px) {
+    // @media (max-width: 1440px) {
+
+    margin-top: 50px;
+  }
   @media (max-width: 1366px) {
     margin-top: 80px;
   }
@@ -304,17 +327,53 @@ export default defineComponent({
   }
 }
 
-.offer-wrap {
-  margin-top: 98px;
-  grid-column: 1/2;
+.sale-wrap {
+  grid-column: 1/3;
   grid-row: 3/4;
+  margin: 85px 0 calc(8px + 5px);
   z-index: 4;
+  width: max-content;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    color: #ffffff;
+    &:first-child {
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 126%;
+    }
+
+    &:last-child {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 34px;
+
+      span {
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 33px;
+      }
+    }
+  }
+}
+
+.offer-wrap {
+  margin-top: 58px;
+  grid-column: 1/2;
+  grid-row: 4/5;
+  z-index: 4;
+  width: max-content;
 
   @media (max-width: 1366px) {
     margin-top: 80px;
   }
 
   @media (max-width: 992px) {
+    width: auto;
     grid-column: 1/2;
     grid-row: 4/5;
     margin-top: 48px;
@@ -324,7 +383,7 @@ export default defineComponent({
 
 .components-wrap {
   grid-column: 1/3;
-  grid-row: 2/4;
+  grid-row: 2/5;
   z-index: 2;
 
   @media (max-width: 992px) {
@@ -435,6 +494,17 @@ h1 {
   &-row {
     border-top: 1px solid #ffffff;
     display: flex;
+
+    .features-item-mobile {
+      @media (min-width: 993px) {
+        display: none;
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
 
     @media (max-width: 1366px) {
       flex-wrap: wrap;
@@ -593,7 +663,9 @@ h1 {
       @media (max-width: 768px) {
         font-size: 18px;
       }
-
+      //  @media (max-width: 576px) {
+      //         font-size: 18px;
+      //       }
       @media (max-width: 425px) {
         font-weight: 400;
         font-size: 12px;
@@ -603,109 +675,112 @@ h1 {
   }
 }
 
+$sdvg: -80px;
+
 .components {
+  @media (max-width: 992px) {
+    // height: 100%;
+    position: relative;
+  }
   .component {
     position: absolute;
     z-index: 8;
-
-    @media (min-width: 1921px) and (max-width: 2222px) {
-      transform: translateX(-3vw);
-    }
+    cursor: pointer;
   }
 
   .component-1 {
-    top: 645px;
-    right: 31%;
-
-    @media (max-width: 1920px) {
-      right: 650px;
-    }
+    top: 668px;
+    right: calc(668px + $sdvg);
 
     @media (max-width: 1537px) {
-      top: 525px;
-      right: 545px;
+      right: calc(540px + $sdvg);
+      // }
+
+      // @media (max-width: 1440px) {
+      top: 553px;
     }
 
     @media (max-width: 1366px) {
-      top: 595px;
-      right: 465px;
+      right: 497px;
+      top: 674px;
     }
 
     @media (max-width: 992px) {
-      top: 475px;
-      right: 58vw;
+      top: 99px;
+      left: 32%;
     }
 
-    @media (max-width: 992px) {
-      top: 327px;
+    @media (max-width: 576px) {
+      top: 111px;
+      left: 33%;
     }
 
-    @media (max-width: 475px) {
-      top: 320px;
-      right: 62vw;
+    @media (max-width: 425px) {
+      top: 114px;
+      right: 65%;
+      left: auto;
     }
   }
 
   .component-2 {
-    top: 805px;
-    right: 25%;
-
-    @media (max-width: 1920px) {
-      right: 485px;
-    }
+    top: 858px;
+    right: calc(527px + $sdvg);
 
     @media (max-width: 1537px) {
-      top: 690px;
-      right: 405px;
+      right: calc(402px + $sdvg);
+      // }
+
+      // @media (max-width: 1440px) {
+      top: calc(858px - 150px);
     }
 
     @media (max-width: 1366px) {
-      top: 772px;
-      right: 315px;
+      right: 341px;
+      top: 846px;
     }
 
     @media (max-width: 992px) {
-      top: 582px;
+      top: 62px;
       right: auto;
-      left: 49vw;
-    }
-
-    @media (max-width: 992px) {
-      top: 431px;
+      left: 58%;
     }
 
     @media (max-width: 576px) {
-      top: 387px;
+      top: 85px;
+      right: auto;
+      left: 56%;
+    }
+
+    @media (max-width: 425px) {
+      top: 88px;
     }
   }
 
   .component-3 {
-    top: 585px;
-    right: 20%;
-
-    @media (max-width: 1920px) {
-      right: 355px;
-    }
+    top: 609px;
+    right: calc(417px + $sdvg);
 
     @media (max-width: 1537px) {
-      top: 485px;
-      right: 305px;
+      right: calc(316px + $sdvg);
+      // }
+
+      // @media (max-width: 1440px) {
+      top: calc(609px - 111px);
     }
 
     @media (max-width: 1366px) {
-      top: 547px;
-      right: 205px;
+      top: 621px;
+      right: 237px;
     }
 
     @media (max-width: 992px) {
-      top: 442px;
+      top: 183px;
       right: auto;
-      left: 58vw;
+      left: 48%;
     }
 
-    @media (max-width: 992px) {
-      left: 56vw;
-      top: 295px;
+    @media (max-width: 768px) {
+      top: 196px;
     }
   }
 }
@@ -717,15 +792,21 @@ h1 {
   left: 50%;
   transform: translateX(-25%);
 
+  @media (max-width: 1537px) {
+    // @media (max-width: 1440px) {
+
+    bottom: 100px;
+  }
+
   @media (max-width: 1366px) {
-    bottom: 33px;
+    bottom: 62px;
     left: 73%;
     transform: translateX(-50%);
   }
 
-  @media (max-width: 1024px) {
-    left: 68%;
-  }
+  // @media (max-width: 1024px) {
+  //   left: 68%;
+  // }
 
   @include flex-center-x(10px);
 
