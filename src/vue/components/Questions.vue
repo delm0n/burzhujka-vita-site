@@ -104,8 +104,8 @@ export default {
         margin-bottom: 30px;
         margin-top: 40px;
 
-        @media (max-width: 1280px) {
-          margin-top: 20px;
+        @media (max-width: 1440px) {
+          margin-top: 0px;
         }
 
         @media (max-width: 1150px) {

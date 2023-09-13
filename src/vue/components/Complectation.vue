@@ -117,6 +117,9 @@ export default defineComponent({
     }
 
     &__media {
+      display: flex;
+      align-items: center;
+
       @media (max-width: 576px) {
         height: auto;
       }
