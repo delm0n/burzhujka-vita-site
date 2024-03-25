@@ -181,7 +181,7 @@
               href="#modal-order"
             >
               <span class="button-background"></span>
-              <span class="button-text">Заказать у производителя</span>
+              <span class="button-text">Купить у производителя</span>
             </a>
           </div>
         </div>

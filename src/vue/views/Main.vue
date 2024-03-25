@@ -43,6 +43,11 @@ import Heating from "../components/Heating.vue";
 import Together from "../components/Together.vue";
 import Feedback from "../components/Feedback.vue";
 
+import ModalCall from "../components/ModalCall.vue";
+import ModalOrder from "../components/ModalOrder.vue";
+import ModalFeedback from "../components/ModalFeedback.vue";
+import ModalSuccess from "../components/ModalSuccess.vue";
+
 export default {
   components: {
     VitaHeader,
@@ -61,18 +66,10 @@ export default {
     Made,
     Feedback,
     Photo: defineAsyncComponent(() => import("../components/Photo.vue")),
-    ModalCall: defineAsyncComponent(() =>
-      import("../components/ModalCall.vue")
-    ),
-    ModalOrder: defineAsyncComponent(() =>
-      import("../components/ModalOrder.vue")
-    ),
-    ModalFeedback: defineAsyncComponent(() =>
-      import("../components/ModalFeedback.vue")
-    ),
-    ModalSuccess: defineAsyncComponent(() =>
-      import("../components/ModalSuccess.vue")
-    ),
+    ModalCall,
+    ModalOrder,
+    ModalFeedback,
+    ModalSuccess,
   },
 };
 </script>

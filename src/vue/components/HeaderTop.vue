@@ -29,6 +29,14 @@
                   v-text="item.name"
                 ></p>
               </li>
+
+              <li>
+                <router-link to="/dostavka">Доставка</router-link>
+              </li>
+
+              <li>
+                <router-link to="/opt">Купить оптом</router-link>
+              </li>
             </ul>
           </div>
 
@@ -98,29 +106,14 @@ export default {
       burger: false,
       navigations: [
         {
-          name: "Преимущества",
-          selector: "#characteristic",
-        },
-
-        {
           name: "Гарантии",
           selector: "#made",
-        },
-
-        {
-          name: "Доставка",
-          selector: "#delivery",
         },
 
         {
           name: "Отзывы",
           selector: "#feedback",
         },
-
-        // {
-        //   name: "Инструкция",
-        //   selector: "#test",
-        // },
       ],
     };
   },
@@ -238,6 +231,10 @@ export default {
     cursor: pointer;
     @media (max-width: 576px) {
       max-width: 70px;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     p {

@@ -354,7 +354,7 @@ export default {
           &:not([data-ll-status="loaded"]) {
             aspect-ratio: 148/133;
           }
-
+          max-width: 100px;
           @media (max-width: 1560px) {
             max-width: 90px;
           }

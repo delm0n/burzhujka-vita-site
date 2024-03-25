@@ -79,7 +79,7 @@
                   class="vita-input"
                   name="phone"
                   placeholder="Ваш телефон"
-                  type="text"
+                  type="tel"
                   required
                 />
                 <input

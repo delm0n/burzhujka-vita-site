@@ -26,7 +26,7 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
-import DostavkaBlock from '../components/DostavkaBlock.vue'
+import DostavkaBlock from "../components/DostavkaBlock.vue";
 
 export default {
   components: {
@@ -41,6 +41,10 @@ export default {
 @import "../../scss/_fonts.scss";
 @import "../../scss/_main.scss";
 @import "../../scss/_global.scss";
+
+@include robotoFont("../..");
+@include phuduFont("../..");
+@include plexFont("../..");
 
 .page-dostavka {
   form {

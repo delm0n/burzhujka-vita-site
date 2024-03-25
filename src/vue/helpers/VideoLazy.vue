@@ -31,16 +31,18 @@ export default {
   methods: {
     loadVideo() {
       let video = this.$refs.video;
-      let source = video.querySelector("source");
+      if (video) {
+        let source = video.querySelector("source");
 
-      source.src = source.dataset.lazy;
-      video.load();
-      video.classList.add("video-lazy--loaded");
-      video.play();
+        source.src = source.dataset.lazy;
+        video.load();
+        video.classList.add("video-lazy--loaded");
+        video.play();
 
-      source.removeAttribute("data-lazy");
-      ScrollTrigger.getById(this.id).kill(true);
-      this.gsap.timeline().kill(true);
+        source.removeAttribute("data-lazy");
+        ScrollTrigger.getById(this.id).kill(true);
+        this.gsap.timeline().kill(true);
+      }
     },
   },
   mounted() {

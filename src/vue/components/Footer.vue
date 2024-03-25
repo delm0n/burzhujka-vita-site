@@ -36,19 +36,6 @@
         </div>
 
         <div class="footer-wrapper__links">
-          <div>
-            <a href="static/uploadupdate/confidentiality.pdf" target="_blank"
-              >Политика конфиденциальности</a
-            >
-          </div>
-          <div>
-            <a
-              download
-              href="static/uploadupdate/oferta-rus.pdf"
-              target="_blank"
-              >Договор оферты</a
-            >
-          </div>
           <div v-if="path != 'dostavka'">
             <router-link to="/dostavka">Доставка по всей России</router-link>
           </div>
